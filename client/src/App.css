@@ -1,0 +1,202 @@
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box; /* Safari, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    text-decoration: none;
+}
+
+
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+}
+.maxWidth{
+    max-width:500px;
+}
+#post-form{
+    margin-top:20px;
+    width: 100%;
+    
+    
+}
+
+#post-form form{
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+    
+}
+
+#post-form-title{
+    padding: 5px;
+    text-align: center;
+}
+
+#post-form-ta{
+    padding:5px 10px;
+    resize: none;
+    height: 100px;
+}
+
+#post-form-btn-con{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#post-form-btn-con button{
+    height:20px
+}
+
+#post-form-error{
+    position: absolute;
+    left:0;
+    font-size: 15px;
+
+    
+}
+
+
+
+.eachPost{
+    padding:10px;
+    background-color: lightyellow;
+    
+    
+
+    width: 100%;
+    
+}
+
+#each-post-title{
+    font-size: 45px;
+    font-weight: 800px;
+}
+
+#each-post-name-con{
+    font-size: 16px;
+    color:grey;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#each-post-content-con{
+    background-color: rgba(235, 235, 22, 0.212);
+    margin: 10px  10px 0 10px ;
+    padding: 10px ;
+    font-size: 25px;
+}
+
+.comment-con{
+    padding:10px;
+    width:100%;
+    max-width: 400px;
+    
+    
+    
+}
+
+.comment-con #comment-section{
+    font-size: 16px;
+    color:grey;
+    font-weight: bolder;
+    cursor: pointer;  
+    display: inline;
+    padding: 5px;
+}
+.comment-con #comment-section:hover{
+    background-color: darkgrey;
+    color: white;
+}
+
+.comment-con .eachComment:not(:last-child){
+    margin-bottom: 10px;
+}
+
+
+.eachComment{
+    margin-left: 10%;
+    padding: 10px;
+    background-color: rgba(235, 235, 22, 0.212);
+}
+
+.comment-name-con{
+    display: flex;
+    color:grey;
+    font-size: 16px;
+
+}
+
+.comment-name-con p{
+    margin-right: 5px;
+
+}
+.comment-content-con{
+    margin-left:10px;
+}
+
+.date{
+    margin-right:10px;
+    margin-left: auto;
+    font-size: 14px;
+}
+
+/* Nav */
+
+.nav-list{
+    background-color: lightgrey;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    
+}
+.nav-list li:not(#nav-login){
+    cursor: pointer;
+    margin-right: 5px;
+
+
+}
+.nav-list li a{
+    text-align: center; 
+    display: block;
+    width: 80px;
+    padding: 10px;
+    
+    
+}
+.nav-list li a:hover{
+    background-color: grey;
+    
+}
+.nav-list  .active{
+    background-color: red;
+}
+#nav-login{
+    flex-grow: 5;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+/* END Nav */
+
+/* Login */
+#login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:15px;
+    padding:15px;
+
+}
+#login input:not(#login-submit){
+    width: 200px;
+}
+
+/* End Login*/

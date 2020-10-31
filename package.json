@@ -1,13 +1,18 @@
 {
-  "name": "mefgrn",
+  "name": "mern",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "client install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
-  "author": "davfgfg",
+  "author": "davidchenbest",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -26,5 +31,8 @@
     "react-router-dom": "^5.2.0",
     "validator": "^13.1.17",
     "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
