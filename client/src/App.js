@@ -4,16 +4,19 @@ import Nav from './components/nav'
 import AddPostForm from './components/addPost/addPostForm'
 import PostContainer from './components/displayPost/postContainer'
 import Login from './components/Login/login'
+import ManagePost from './components/managePost.js/managePost'
 import { BrowserRouter, Route } from 'react-router-dom';
 
 
 function App() {
   return (
     <BrowserRouter>
-    <Route exact path='/' >
+
+      <Route exact path='/' >
         <Nav></Nav>
         <p>Home</p>
       </Route>
+
       <Route exact path='/blog'>
         <div className="App">
           <Nav></Nav>
@@ -21,6 +24,17 @@ function App() {
           <PostContainer></PostContainer>
         </div>
       </Route>
+
+      <Route exact path='/manage'>
+        
+          <Nav></Nav>
+          <ManagePost></ManagePost>
+          
+        
+      </Route>
+
+      
+
       <Route exact path='/login' >
         <Nav></Nav>
         <Login></Login>

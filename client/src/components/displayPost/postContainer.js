@@ -35,11 +35,11 @@ class PostContainer extends Component {
 
     render() {
         return (
-            <div  className='eachPost maxWidth'>
+            <>
                 {this.state.data.map((d, index) => (
                     <EachPost key={index} title={d.title} content={d.content} first={d.author.first} last={d.author.last} date={secToDate(d.date)} comments={d.comments}></EachPost>
                 ))}
-            </div>
+            </>
         );
     }
 }

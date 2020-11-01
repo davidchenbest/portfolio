@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
 router.get('/logout', (req, res) => {
     res.cookie('jwt', '',{httpOnly:true, maxAge:1})
     res.cookie('jiachenuser', '',{maxAge:1})
-   res.redirect('home')
+   res.redirect('/')
 })
 
 // router.post('/signup', async (req, res) => {
