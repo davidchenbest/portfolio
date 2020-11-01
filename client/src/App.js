@@ -10,7 +10,11 @@ import { BrowserRouter, Route } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-      <Route exact path='/'>
+    <Route exact path='/' >
+        <Nav></Nav>
+        <p>Home</p>
+      </Route>
+      <Route exact path='/blog'>
         <div className="App">
           <Nav></Nav>
           <AddPostForm></AddPostForm>
