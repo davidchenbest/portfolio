@@ -26,7 +26,7 @@ const ManagePost = () => {
         const id  = e.target.dataset.id
         const query = addToPost(id)
         const data = await fetchReviewGraphQL(query)
-        console.log(data);
+        // console.log(data);
     }
     return (
         <>
