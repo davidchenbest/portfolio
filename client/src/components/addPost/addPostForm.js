@@ -34,7 +34,8 @@ class AddPostForm extends Component {
     }
 
     submitPost = (title, content) => {
-        if (title && content) {
+        if (title.trim() && content.trim()) {
+            console.log(title,content);
             this.setState({ title, content, submit: !this.state.submit })
         }
     }

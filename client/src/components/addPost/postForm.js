@@ -13,7 +13,7 @@ class PostForm extends Component {
     }
     submit = (event) => {
         event.preventDefault();
-        if (this.state.title && this.state.content) {
+        if (this.state.title.trim() && this.state.content.trim()) {
             this.props.submitPost(this.state.title, this.state.content)
         }
         else {

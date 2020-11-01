@@ -19,12 +19,7 @@ app.use('/graphql', graphqlHTTP({
 app.use(apiRoute)
 app.use(authRoutes)
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/build'))
-    app.get('*',(req,res)=>{
-      res.sendFile(path.join(__dirname+'/client/build/index.html'));
-    })
-}
+
 
 const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://jiachen.herokuapp.com/']
 const corsOptions = {
@@ -50,4 +45,12 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 const port = process.env.PORT
 app.listen(port, ()=>{
     console.log('serving port ' + process.env.PORT );
+    
 })
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'))
+  app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  })
+}
