@@ -1,8 +1,9 @@
 import React from 'react'
 import CommentContainer from './commentContainer'
+import AddComment from './addComment'
 import cap from '../../modules/capitalizeFirstLetter'
 
-const EachPost = ({ title, content, first, last, date, comments, email }) => {
+const EachPost = ({id,title, content, first, last, date, comments, email }) => {
     return (
         <div className='eachPost maxWidth'>
             <div id='each-post-title-con'>
@@ -16,11 +17,11 @@ const EachPost = ({ title, content, first, last, date, comments, email }) => {
             <div id='each-post-content-con'>
                 <p>{content}</p>
             </div>
-
+            <AddComment id={id}></AddComment>
             {(comments.length >0) &&
             <CommentContainer comments={comments}></CommentContainer>
             }
-
+            
         </div>
     )
 

@@ -6,6 +6,7 @@ const CommentContainer = ({comments})=>{
     const [show,setShow] = useState(false)
     return(
        <div className='comment-con'>
+           
            <p id='comment-section' onClick={()=>{setShow(!show)}}>comments</p>
            
            {show && 
@@ -24,6 +25,7 @@ const CommentContainer = ({comments})=>{
             
             
             )}
+            
        </div> 
     )
 

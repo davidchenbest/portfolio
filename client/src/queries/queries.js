@@ -15,6 +15,15 @@ function addAuthor(email, first, last) {
       }`
 }
 
+function addComment(authorId, postId, content) {
+  return `
+    mutation{
+      addReviewComment(authorId:"${authorId}",postId:"${postId}",content:"${content}"){
+          id
+        }
+      }`
+}
+
 function addReviewPost(authorId, title, content) {
   return `mutation{
     addReviewPost(authorId:"${authorId}",title:"${title}",content:"""${content}"""){
@@ -27,6 +36,7 @@ function postsQuery(){
   return `
   {
     posts{
+      id
       date
       title
       content
@@ -47,4 +57,4 @@ function postsQuery(){
    `
 }
 
-module.exports = { emailQuery, addAuthor, addReviewPost, postsQuery }
+module.exports = { emailQuery, addAuthor, addComment, addReviewPost, postsQuery }

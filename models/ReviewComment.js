@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const commentSchema = new mongoose.Schema({
+const reviewCommentSchema = new mongoose.Schema({
     content:{
         type:String,
         required: [true, 'Please add Content']
@@ -20,5 +20,5 @@ const commentSchema = new mongoose.Schema({
 
 })
 
-const Comment = mongoose.model('comment',commentSchema)
-module.exports = Comment
+const ReviewComment = mongoose.model('reviewComment',reviewCommentSchema)
+module.exports = ReviewComment

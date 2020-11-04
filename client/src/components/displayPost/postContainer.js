@@ -17,7 +17,6 @@ class PostContainer extends Component {
 
     async componentDidMount() {
         const data = (await this.getData()).data.posts
-        
         this.setState({ data })
     }
 
@@ -37,7 +36,7 @@ class PostContainer extends Component {
         return (
             <>
                 {this.state.data.map((d, index) => (
-                    <EachPost key={index} title={d.title} content={d.content} first={d.author.first} last={d.author.last} date={secToDate(d.date)} comments={d.comments}></EachPost>
+                    <EachPost key={index} id={d.id} title={d.title} content={d.content} first={d.author.first} last={d.author.last} date={secToDate(d.date)} comments={d.comments}></EachPost>
                 ))}
             </>
         );

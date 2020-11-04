@@ -2,6 +2,7 @@ const Post = require('../models/Post')
 const Author = require('../models/Author')
 const Comment = require('../models/Comment')
 const ReviewPost = require('../models/ReviewPost')
+const ReviewComment = require('../models/ReviewComment')
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -12,7 +13,7 @@ const {
   } = require('graphql');
 
 
-const { AuthorType, PostType, CommentType } = require('../graphQLTypes/types')
+const { AuthorType, PostType, CommentType } = require('../graphQLTypes/types');
 
   const RootQuery = new GraphQLObjectType({
       name:'RootQueryType',
@@ -100,7 +101,25 @@ const { AuthorType, PostType, CommentType } = require('../graphQLTypes/types')
                 })
                 return reviewPost.save()
               }
-          }
+          },
+          addReviewComment:{
+            type:CommentType,
+              args:{
+                authorId:{type: new GraphQLNonNull(GraphQLString)},
+                postId:{type: new GraphQLNonNull(GraphQLString)},
+                content:{type: new GraphQLNonNull(GraphQLString)},
+              },
+              resolve(parent,args){
+                let reviewComment =  new ReviewComment({
+                    authorId:args.authorId,
+                    postId:args.postId,
+                    content:args.content
+                })
+                console.log(reviewComment);
+                return reviewComment.save()
+              }
+          },
+          
       }
   })
 

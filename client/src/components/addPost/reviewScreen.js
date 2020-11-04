@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ReviewScreen = ({type,title,goBack})=>{
-    console.log(title);
     return(
         <div>
             <p>

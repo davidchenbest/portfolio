@@ -54,7 +54,7 @@ const CommentType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         content: { type: GraphQLString },
-        postID: { type: GraphQLID },
+        postId: { type: GraphQLID },
         date: { type: GraphQLString },
         author: {
             type: AuthorType,

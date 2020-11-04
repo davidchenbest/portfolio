@@ -7,6 +7,15 @@
     text-decoration: none;
 }
 
+.wrapper{
+    padding:15px
+}
+
+.button{
+    height: 25px;
+    padding: 3px ;
+}
+
 
 .App{
     display: flex;
@@ -202,3 +211,15 @@
 }
 
 /* End Login*/
+
+/* Review Post */
+span#add-review-post{
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 3px;
+}
+#add-review-post{
+    position: relative;
+    top:15px;
+}
+/* End Review Post */
