@@ -13,7 +13,7 @@ const ManagePost = () => {
             const data = await fetchReviewGraphQL(query)
             const dataReview = data.data.reviewPosts
             setPosts(dataReview)
-            console.log(dataReview);
+
 
 
         })()

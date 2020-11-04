@@ -4,7 +4,8 @@ import Nav from './components/nav'
 import AddPostForm from './components/addPost/addPostForm'
 import PostContainer from './components/displayPost/postContainer'
 import Login from './components/Login/login'
-import ManagePost from './components/managePost.js/managePost'
+import ManagePost from './components/managePost/managePost'
+import ManageComment from './components/manageComment/manageComment'
 import { BrowserRouter, Route } from 'react-router-dom';
 
 
@@ -29,7 +30,7 @@ function App() {
         
           <Nav></Nav>
           <ManagePost></ManagePost>
-          
+          <ManageComment></ManageComment>
         
       </Route>
 

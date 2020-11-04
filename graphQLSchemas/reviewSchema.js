@@ -1,6 +1,9 @@
-const {  PostType} = require('../graphQLTypes/types')
+const {  PostType, CommentType} = require('../graphQLTypes/types')
 const ReviewPost = require('../models/ReviewPost')
+const ReviewComment = require('../models/ReviewComment')
 const Post = require('../models/Post')
+const Comment = require('../models/Comment')
+
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -19,6 +22,12 @@ const ReviewQuery =  new GraphQLObjectType({
           resolve(parent){
               return ReviewPost.find({})
           }
+      },
+      reviewComments:{
+        type: new GraphQLList(CommentType),
+        resolve(parent){
+          return ReviewComment.find({})
+        }
       }
     }
 })
@@ -28,7 +37,6 @@ const ReviewQuery =  new GraphQLObjectType({
 const ReviewMutation = new GraphQLObjectType({
     name:'ReviewMutation',
     fields:{
-        
         addToPost:{
           type:PostType,
             args:{
@@ -39,6 +47,18 @@ const ReviewMutation = new GraphQLObjectType({
               await ReviewPost.deleteOne({_id:args.id})
               
               return Post.create({authorId,title,content})
+            }
+        },
+        addToComment:{
+          type:CommentType,
+            args:{
+              id:{type: new GraphQLNonNull(GraphQLString)}
+            },
+            async resolve (parent,args){
+              const {authorId, postId, content} = await ReviewComment.findById(args.id)
+              await ReviewComment.deleteOne({_id:args.id})
+              
+              return Comment.create({authorId, postId, content})
             }
         }
     }

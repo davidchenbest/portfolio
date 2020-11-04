@@ -15,6 +15,26 @@ function getReviewPosts(){
       }`
 }
 
+function getReviewComments(){
+  return `
+  {
+    reviewComments{
+      id
+      date
+      content
+      postId
+      author{
+        first
+        last
+        email
+      }
+  
+      
+    }
+  }
+  `
+}
+
 function addToPost(id){
   return `
   mutation{
@@ -25,4 +45,14 @@ function addToPost(id){
   `
 }
 
-module.exports = {getReviewPosts, addToPost}
+function addToComment(id){
+  return `
+  mutation{
+    addToComment(id:"${id}"){
+      id
+    }
+  }
+  `
+}
+
+module.exports = {getReviewPosts,getReviewComments, addToPost,addToComment}

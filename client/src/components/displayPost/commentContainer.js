@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import cap from '../../modules/capitalizeFirstLetter'
-import secToDate from '../../modules/secToDate'
+import EachComment from './eachComment'
 
 const CommentContainer = ({comments})=>{
     const [show,setShow] = useState(false)
@@ -11,17 +10,8 @@ const CommentContainer = ({comments})=>{
            
            {show && 
            comments.map((c,i) =>
-           <div className='eachComment' key={i}>
-               <div className='comment-name-con'>
-                    <p>{cap(c.author.first)}</p>
-                    <p>{cap(c.author.last)}</p>
-                    <p className='date'>{secToDate(c.date)}</p>
-               </div>
-               <div className='comment-content-con'>
-               <p >{c.content}</p>
-               </div>
-
-           </div>
+           <EachComment key={i} first={c.author.first} last={c.author.first} date={c.date} content={c.content}></EachComment >
+           
             
             
             )}

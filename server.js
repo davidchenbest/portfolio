@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const apiRoute = require('./routes/api')
 const authRoutes = require('./routes/authRoutes')
-const managePost = require('./routes/managePost')
 const path = require('path')
 const cors = require('cors')
 const mongoose = require('mongoose')
@@ -25,7 +24,6 @@ app.use('/reviewGraphql', graphqlHTTP({
 
 app.use(apiRoute)
 app.use(authRoutes)
-app.use(managePost)
 
 
 
