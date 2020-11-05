@@ -2,21 +2,7 @@ const express = require('express');
 const router = express.Router()
 const User = require('../models/User')
 const jwt = require('jsonwebtoken');
-const cookieParser = require('cookie-parser');
-router.use(cookieParser());
 
-function handleErrors(err) {
-    let obj = { errors: {} }
-    if (err.errors.email) {
-        obj.errors.email = err.errors.email.message
-    }
-    if (err.errors.password) {
-        obj.errors.password = err.errors.password.message
-    }
-    
-    return obj
-
-}
 
 const maxTime = 60 * 60;
 function createToken(id){
