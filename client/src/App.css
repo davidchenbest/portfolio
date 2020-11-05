@@ -6,6 +6,7 @@
     box-sizing: border-box;         /* Opera/IE 8+ */
     text-decoration: none;
     list-style: none;
+    
 }
 
 .wrapper{
@@ -17,6 +18,9 @@
     padding: 3px ;
 }
 
+.preserveBreak{
+    white-space: pre-line /* preserve lne break */
+}
 
 
 
@@ -169,7 +173,7 @@
     display: flex;
     height: 80px;
     align-items: center;
-
+    border-bottom: 1px solid lightgrey;
     
 }
 .nav-list #logo{

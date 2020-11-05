@@ -4,6 +4,8 @@ import AddComment from './addComment'
 import cap from '../../modules/capitalizeFirstLetter'
 
 const EachPost = ({id,title, content, first, last, date, comments, email }) => {
+    
+    console.log(content);
     return (
         <div className='eachPost maxWidth'>
             <div id='each-post-title-con'>
@@ -15,7 +17,7 @@ const EachPost = ({id,title, content, first, last, date, comments, email }) => {
                 <p className='date'>{date}</p>
             </div>
             <div id='each-post-content-con'>
-                <p>{content}</p>
+                <p className='preserveBreak'>{content}</p>
             </div>
             <AddComment id={id}></AddComment>
             {(comments.length >0) &&
