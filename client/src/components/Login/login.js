@@ -31,7 +31,7 @@ const Login = () => {
         <form id='login' onSubmit={submit}>
             <input type='email' placeholder='Email' onChange={e=>setEmail(e.target.value)} />
             <input type='password' placeholder='Password' onChange={e=>setPass(e.target.value)} />
-            <input id='login-submit'  type='submit' value='submit' />
+            <input id='login-submit' className='button' type='submit' value='Login' />
             <span>{error}</span>
         </form>
     )

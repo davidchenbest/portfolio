@@ -19,10 +19,11 @@ const EachPost = ({id,title, content, first, last, date, comments, email }) => {
             <div id='each-post-content-con'>
                 <p className='preserveBreak'>{content}</p>
             </div>
-            <AddComment id={id}></AddComment>
+            
             {(comments.length >0) &&
             <CommentContainer comments={comments}></CommentContainer>
             }
+            <AddComment id={id}></AddComment>
             
         </div>
     )

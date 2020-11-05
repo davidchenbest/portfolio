@@ -11,14 +11,15 @@ class AddPostForm extends Component {
         super();
         this.state = {
             message: '',
-            reviewScreen:false,
+            reviewScreen: false,
             submit: false,
+            showForm: false,
             title: '',
             content: ''
         };
     }
     componentDidMount() {
-        
+
     }
 
     async fetchGraphQL(query) {
@@ -35,12 +36,14 @@ class AddPostForm extends Component {
 
     submitPost = (title, content) => {
         if (title.trim() && content.trim()) {
-            console.log(title,content);
+            console.log(title, content);
             this.setState({ title, content, submit: !this.state.submit })
         }
     }
 
     goBack = () => {
+
+
 
         this.setState({ submit: false })
     }
@@ -50,7 +53,7 @@ class AddPostForm extends Component {
             const query = addReviewPost(id, this.state.title, this.state.content)
             const reviewPost = await this.fetchGraphQL(query)
             const reviewPostId = reviewPost.data.addReviewPost.title
-            this.setState({reviewScreen:true, title: '', content: '', message: `${reviewPostId} submitted for review` })
+            this.setState({ reviewScreen: true, title: '', content: '', message: `${reviewPostId} submitted for review` })
             setTimeout(() => { this.setState({ message: '' }) }, 3000)
             this.setState({ submit: false })
         }
@@ -61,13 +64,16 @@ class AddPostForm extends Component {
 
     }
 
-    setReviewScreen=()=>{
-        this.setState({reviewScreen:false})
+    setReviewScreen = () => {
+        this.setState({ reviewScreen: false })
     }
 
     display = () => {
-        if(this.state.reviewScreen){
-            return(<ReviewScreen goBack={this.setReviewScreen} type='post' title={this.state.title}></ReviewScreen>)
+        if (!this.state.showForm) return (
+            <button id='add-post' onClick={() => this.setState({ showForm: !this.state.showForm })}>Post</button>
+        )
+        if (this.state.reviewScreen) {
+            return (<ReviewScreen goBack={this.setReviewScreen} type='post' title={this.state.title}></ReviewScreen>)
         }
         if (this.state.submit) return (
             <CheckEmail checkEmail={this.checkEmail} goBack={this.goBack}></CheckEmail>
@@ -85,9 +91,9 @@ class AddPostForm extends Component {
             <div id='post-form' className='maxWidth'>
                 {this.display()}
 
-                
-                </div>
-            
+
+            </div>
+
         );
     }
 }

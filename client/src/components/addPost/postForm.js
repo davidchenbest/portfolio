@@ -26,12 +26,12 @@ class PostForm extends Component {
 
     render() {
         return (
-            <form >
+            <form autoComplete="off">
                 <input id='post-form-title' placeholder='Title' type='text' onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title}></input>
                 <textarea id='post-form-ta' onChange={(e) => this.setState({ content: e.target.value })} value={this.state.content}></textarea>
                 <div id='post-form-btn-con'>
                     <span id='post-form-error'>{this.state.error}</span>
-                    <button onClick={this.submit} >Submit Post</button>
+                    <button onClick={this.submit} >Post</button>
                 </div>
             </form>
         );

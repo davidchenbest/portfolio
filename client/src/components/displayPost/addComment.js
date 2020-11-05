@@ -35,18 +35,18 @@ const AddComment = ({ id }) => {
             <CheckEmail goBack={goBack} checkEmail={checkEmail}></CheckEmail>
         )
         else if (commentForm) return (
-            <form onSubmit={(e) => { e.preventDefault(); setCheckEmailform(!checkEmailForm) }}>
-                <input type='text' onChange={(e) => setComment(e.target.value)} value={comment} />
-                <input type='submit' />
+            <form onSubmit={(e) => { e.preventDefault(); setCheckEmailform(!checkEmailForm) }} className='commentForm'>
+                <textarea type='text' onChange={(e) => setComment(e.target.value)} value={comment} placeholder='Comment' ></textarea>
+                <input type='submit' className='button' />
             </form>
         )
         return (
-            <button onClick={() => setCommentForm(!commentForm)}>Add Comment</button>
+            <button className='button' onClick={() => setCommentForm(!commentForm)}>Comment</button>
         )
     }
 
     return (
-        <div>
+        <div id='add-btn-con'>
             {display()}
         </div>
     )

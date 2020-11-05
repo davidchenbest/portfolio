@@ -6,7 +6,7 @@ const CommentContainer = ({comments})=>{
     return(
        <div className='comment-con'>
            
-           <p id='comment-section' onClick={()=>{setShow(!show)}}>comments</p>
+           <p id='comment-section' onClick={()=>{setShow(!show)}}>Comments</p>
            
            {show && 
            comments.map((c,i) =>

@@ -68,24 +68,28 @@ class CheckEmail extends Component {
 
     display = () => {
         if (this.state.isAuthor) return (
-            <form onSubmit={this.checkEmail}>
-                <label>Email</label>
-                <input onChange={(e) => this.setState({ email: e.target.value })} required></input>
-                <button>Enter Email</button>
-                <button onClick={this.goBack}>Back</button>
+            <form className='checkEmailForm' onSubmit={this.checkEmail}>
+                <input onChange={(e) => this.setState({ email: e.target.value })} placeholder='Email' required></input>
+                <div className='btn-con'>
+                    <button>Enter Email</button>
+                    <button onClick={this.goBack}>Back</button>
+                </div>
             </form>
         )
         return (
-            <form onSubmit={this.checkEmail}>
+            <form className='checkEmailForm' onSubmit={this.checkEmail}>
                 <label>Email</label>
-                <input onChange={(e) => this.setState({ email: e.target.value })} required></input>
+                <input onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} required></input>
                 <label>First</label>
                 <input onChange={(e) => this.setState({ first: e.target.value })} required></input>
                 <label>Last</label>
                 <input onChange={(e) => this.setState({ last: e.target.value })} required></input>
                 <span>{this.state.error}</span>
-                <button>Enter Email</button>
-                <button onClick={this.goBack}>Back</button>
+                <div className='btn-con'>
+
+                    <button>Enter Email</button>
+                    <button onClick={this.goBack}>Back</button>
+                </div>
             </form>
         )
     }

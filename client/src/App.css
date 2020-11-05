@@ -1,252 +1,317 @@
-*{
-    padding: 0;
-    margin: 0;
-    -webkit-box-sizing: border-box; /* Safari, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
-    text-decoration: none;
-    list-style: none;
-    
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box; /* Safari, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+  text-decoration: none;
+  list-style: none;
 }
 
-.wrapper{
-    padding:15px
+.wrapper {
+  padding: 15px;
 }
 
-.button{
-    height: 25px;
-    padding: 3px ;
+.button {
+  border: none;
+  height: 25px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: grey;
+  white-space: nowrap;
+}
+.button:hover {
+  background-color: grey;
+  color: white;
 }
 
-.preserveBreak{
-    white-space: pre-line /* preserve lne break */
+.preserveBreak {
+  white-space: pre-line; /* preserve lne break */
 }
 
-
-
-.App{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
-.maxWidth{
-    max-width:500px;
+.maxWidth {
+  max-width: 800px;
 }
-#post-form{
-    margin-top:20px;
-    width: 100%;
-    
-    
+#post-form {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-
-#post-form form{
-    
-    display: grid;
-    grid-template-columns: 1fr;
-    margin-bottom: 20px;
-    
+#post-form #add-post {
+  font-size: large;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 3px 15px;
+  border: 1px solid lightgrey;
 }
-
-#post-form-title{
-    padding: 5px;
-    text-align: center;
+#post-form #add-post:hover {
+  background-color: lightgrey;
 }
 
-#post-form-ta{
-    padding:5px 10px;
-    resize: none;
-    height: 100px;
+#post-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-#post-form-btn-con{
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-#post-form-btn-con button{
-    height:20px
-}
-
-#post-form-error{
-    position: absolute;
-    left:0;
-    font-size: 15px;
-
-    
+#post-form-title {
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid lightgrey;
+  border-bottom: none;
+  border-radius: 5px;
 }
 
-
-
-.eachPost{
-    padding:10px;
-    background-color: lightyellow;
-    
-    
-    margin-bottom: 15px;
-
-    width: 100%;
-    
+#post-form-ta {
+  border-radius: 5px;
+  padding: 5px 10px;
+  resize: none;
+  height: 100px;
+  border: 1px solid lightgrey;
 }
 
-
-#each-post-title{
-    font-size: 45px;
-    font-weight: 800px;
+#post-form-btn-con {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+#post-form-btn-con button {
+  border-radius: 5px;
+  border: none;
+  padding: 3px 10px;
+}
+#post-form-btn-con button:hover {
+  background-color: rgba(6, 206, 6, 0.671);
 }
 
-#each-post-name-con{
-    font-size: 16px;
-    color:grey;
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
+#post-form-error {
+  position: absolute;
+  left: 0;
+  font-size: 15px;
 }
 
-#each-post-content-con{
-    background-color: rgba(235, 235, 22, 0.212);
-    margin: 10px  10px 0 10px ;
-    padding: 10px ;
-    font-size: 25px;
+.checkEmailForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.comment-con{
-    padding:10px;
-    width:100%;
-    max-width: 400px;
-    
-    
-    
+.checkEmailForm .btn-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: center;
 }
 
-.comment-con #comment-section{
-    font-size: 16px;
-    color:grey;
-    font-weight: bolder;
-    cursor: pointer;  
-    display: inline;
-    padding: 5px;
-}
-.comment-con #comment-section:hover{
-    background-color: darkgrey;
-    color: white;
+.checkEmailForm input {
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid lightgrey;
+  border-bottom: none;
+  border-radius: 5px;
 }
 
-.comment-con .eachComment:not(:last-child){
-    margin-bottom: 10px;
+.checkEmailForm button {
+  width: 80px;
+  text-align: center;
 }
 
-
-.eachComment{
-    margin-left: 10%;
-    padding: 10px;
-    background-color: rgba(235, 235, 22, 0.212);
+.checkEmailForm button:not(:last-child) {
+  margin-right: 5px;
 }
 
-.comment-name-con{
-    display: flex;
-    color:grey;
-    font-size: 16px;
+.eachPost {
+  padding: 10px;
+  background-color: lightyellow;
 
+  margin-bottom: 15px;
+
+  width: 100%;
+}
+.eachPost button {
+  margin-top: 5px;
 }
 
-.comment-name-con p{
-    margin-right: 5px;
-
-}
-.comment-content-con{
-    margin-left:10px;
+#each-post-title {
+  font-size: 45px;
+  font-weight: 800px;
 }
 
-.date{
-    margin-right:10px;
-    margin-left: auto;
-    font-size: 14px;
+#each-post-name-con {
+  font-size: 16px;
+  color: grey;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#each-post-content-con {
+  background-color: rgba(235, 235, 22, 0.212);
+  margin: 10px 10px 0 10px;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.comment-con {
+  padding: 10px;
+  width: 100%;
+}
+
+.comment-con #comment-section {
+  font-size: 16px;
+  color: grey;
+  font-weight: bolder;
+  cursor: pointer;
+  display: inline;
+  padding: 5px;
+}
+.comment-con #comment-section:hover {
+  background-color: darkgrey;
+  color: white;
+}
+
+.comment-con .eachComment:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.eachComment {
+  padding: 10px;
+  background-color: rgba(235, 235, 22, 0.212);
+}
+
+.comment-name-con {
+  display: flex;
+  color: grey;
+  font-size: 16px;
+}
+
+.comment-name-con p {
+  margin-right: 5px;
+}
+.comment-content-con {
+  margin-left: 10px;
+}
+
+.commentForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.commentForm textarea {
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 80%;
+  height: 50px;
+  border: 1px solid lightgrey;
+  margin-right: 5px;
+}
+
+.date {
+  margin-right: 10px;
+  margin-left: auto;
+  font-size: 14px;
+}
+
+#add-btn-con {
+  display: flex;
+  justify-content: center;
 }
 
 /* Nav */
 
-.nav-list{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    height: 80px;
-    align-items: center;
-    border-bottom: 1px solid lightgrey;
-    
+.nav-list {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
 }
-.nav-list #logo{
-    padding:15px;
-    margin-left:15px;
-    color:black;
-    font-size: 28px;
-    font-weight: 600;
-
-
+.nav-list #logo {
+  padding: 15px;
+  margin-left: 15px;
+  color: black;
+  font-size: 28px;
+  font-weight: 600;
 }
-.nav-list li{
-    cursor: pointer;
-    margin-right: 5px;
-    
-
-
+.nav-list li {
+  cursor: pointer;
+  margin-right: 5px;
 }
-.nav-list li a{
-    border-radius: 5px;
-    white-space: nowrap;
+.nav-list li a {
+  border-radius: 5px;
+  white-space: nowrap;
 }
-.nav-list li a:not(#logo){
-    text-align: center; 
-    display: block;
-    width: 90px;
-    padding: 10px;
-    font-size: 22px;
-    color:black;
-    
-    
-    
+.nav-list li a:not(#logo) {
+  text-align: center;
+  display: block;
+  width: 90px;
+  padding: 10px;
+  font-size: 22px;
+  color: black;
 }
-.nav-list li a:not(#logo):not(.active):hover{
-    background-color: lightgrey;
-    
+.nav-list li a:not(#logo):not(.active):hover {
+  background-color: lightgrey;
 }
-.nav-list  .active{
-    background-color: #385898;
-    color: white !important;
+.nav-list .active {
+  background-color: #385898;
+  color: white !important;
 }
 
-#nav-login{
-    flex-grow: 5;
-    display: flex;
-    justify-content: flex-end;
-    
+#nav-login {
+  flex-grow: 5;
+  display: flex;
+  justify-content: flex-end;
 }
 /* END Nav */
 
 /* Login */
-#login{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top:15px;
-    padding:15px;
-
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  padding: 15px;
 }
-#login input:not(#login-submit){
-    width: 200px;
+#login input:not(#login-submit) {
+  width: 200px;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid lightgrey;
+
+  border-radius: 5px;
+}
+#login input:not(:last-child) {
+  margin-bottom: 5px;
+}
+#login input {
+  padding: 3px;
 }
 
 /* End Login*/
 
 /* Review Post */
-span#add-review-post{
-    background-color: lightgreen;
-    border-radius: 5px;
-    padding: 3px;
+span#add-review-post {
+  background-color: lightgreen;
+  border-radius: 5px;
+  padding: 3px;
 }
-#add-review-post{
-    position: relative;
-    top:15px;
+#add-review-post {
+  position: relative;
+  top: 15px;
 }
 /* End Review Post */
