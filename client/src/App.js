@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
+import './home.css';
 import Nav from './components/nav'
 import AddPostForm from './components/addPost/addPostForm'
 import PostContainer from './components/displayPost/postContainer'
 import Login from './components/Login/login'
 import ManagePost from './components/managePost/managePost'
 import ManageComment from './components/manageComment/manageComment'
+import PortfolioContainer from './components/portfolio/portfolioContainer'
 import { BrowserRouter, Route } from 'react-router-dom';
 
 
@@ -15,7 +17,7 @@ function App() {
 
       <Route exact path='/' >
         <Nav></Nav>
-        <p>Home</p>
+        <PortfolioContainer></PortfolioContainer>
       </Route>
 
       <Route exact path='/blog'>
@@ -27,14 +29,14 @@ function App() {
       </Route>
 
       <Route exact path='/manage'>
-        
-          <Nav></Nav>
-          <ManagePost></ManagePost>
-          <ManageComment></ManageComment>
-        
+
+        <Nav></Nav>
+        <ManagePost></ManagePost>
+        <ManageComment></ManageComment>
+
       </Route>
 
-      
+
 
       <Route exact path='/login' >
         <Nav></Nav>
