@@ -5,6 +5,7 @@
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
     text-decoration: none;
+    list-style: none;
 }
 
 .wrapper{
@@ -15,6 +16,8 @@
     height: 25px;
     padding: 3px ;
 }
+
+
 
 
 .App{
@@ -161,34 +164,54 @@
 /* Nav */
 
 .nav-list{
-    background-color: lightgrey;
     width: 100%;
     list-style: none;
     display: flex;
+    height: 80px;
     align-items: center;
+
     
 }
-.nav-list li:not(#nav-login){
+.nav-list #logo{
+    padding:15px;
+    margin-left:15px;
+    color:black;
+    font-size: 28px;
+    font-weight: 600;
+
+
+}
+.nav-list li{
     cursor: pointer;
     margin-right: 5px;
+    
 
 
 }
 .nav-list li a{
+    border-radius: 5px;
+    white-space: nowrap;
+}
+.nav-list li a:not(#logo){
     text-align: center; 
     display: block;
-    width: 80px;
+    width: 90px;
     padding: 10px;
+    font-size: 22px;
+    color:black;
+    
     
     
 }
-.nav-list li a:hover{
-    background-color: grey;
+.nav-list li a:not(#logo):not(.active):hover{
+    background-color: lightgrey;
     
 }
 .nav-list  .active{
-    background-color: red;
+    background-color: #385898;
+    color: white !important;
 }
+
 #nav-login{
     flex-grow: 5;
     display: flex;
