@@ -4,6 +4,46 @@
     object-fit: cover;
     border-radius: 50%
   }
+
+  #port-img{
+      width: 500px;
+      cursor: pointer;
+  }
+
+  .port-screen{
+      padding: 10px;
+      padding-top: 40px;
+      display: none;
+      grid-template-columns: auto auto;
+    color:white;
+      top: 5vh;
+      width: 90vw;
+      min-height: 90vh;
+      background-color:#555555f8;
+      position: absolute;
+      z-index: 3;
+  }
+  #screen-img{
+      width: 100%;
+      margin-bottom: 10px;
+      
+  }
+  #screen-img:hover{
+      border:1px solid lightgrey;
+  }
+
+  .exit-screen{
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      padding: 6px 12px;
+      border: 1px solid black;
+  }
+
+  .exit-screen:hover{
+      background-color: red;
+  }
+
 #portfolioContainer{
     text-align: center;
     
@@ -19,20 +59,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
     margin-bottom: 15px;
     
 
 }
 
 .landing-content p{
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .landing-content span{
-    margin-bottom: 15px;
-    
-    
+    margin-bottom: 15px; 
+}
+
+.landing-content .description{
+    font-size: 14px;
+    font-style: italic;
+
 }
 
 .title{
@@ -50,4 +93,17 @@
  .portSection p{
     max-width: 800px;
     margin-bottom: 10px;
+}
+
+
+.badge div{
+    margin:5px;
+}
+.portSection.badge span{
+    display: inline-block;
+    background-color:#888;
+    padding: 3px;
+    border-radius: 5px;
+    margin-bottom: 1px;
+    color: white;
 }
