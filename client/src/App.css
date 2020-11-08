@@ -232,6 +232,11 @@
 
 /* Nav */
 
+#github img{
+  height: 22px;
+  vertical-align: baseline;
+}
+
 .nav-list {
   width: 100%;
   list-style: none;

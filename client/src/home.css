@@ -6,15 +6,15 @@
   }
 
   #port-img{
-      width: 500px;
+      width: 400px;
       cursor: pointer;
   }
 
   .port-screen{
       padding: 10px;
-      padding-top: 40px;
+      padding-top: 30px;
       display: none;
-      grid-template-columns: auto auto;
+      grid-template-columns: 1fr 1fr;
     color:white;
       top: 5vh;
       width: 90vw;
@@ -23,6 +23,9 @@
       position: absolute;
       z-index: 3;
   }
+  .port-screen a{
+      color: lightgray;
+  }
   #screen-img{
       width: 100%;
       margin-bottom: 10px;
@@ -30,6 +33,10 @@
   }
   #screen-img:hover{
       border:1px solid lightgrey;
+  }
+
+  .screen-title{
+      margin-bottom: 30px;
   }
 
   .exit-screen{
@@ -44,7 +51,18 @@
       background-color: red;
   }
 
-#portfolioContainer{
+  .portSelect{
+      display: flex;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .portSelect div:not(:last-child){
+   margin-right: 10px;
+}
+
+.portfolioContainer{
     text-align: center;
     
 }

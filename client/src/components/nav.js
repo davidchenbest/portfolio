@@ -15,7 +15,7 @@ class Nav extends Component {
         path = path.split('/')
         path = path[1]
         if (path === '') path = 'home'
-        else if(path ==='manage')this.auth()
+        else if (path === 'manage') this.auth()
         let aArr = document.querySelectorAll('.nav-list li a')
         aArr.forEach(a => {
             const tabName = a.innerHTML.toLowerCase()
@@ -25,8 +25,8 @@ class Nav extends Component {
         })
     }
 
-    auth(){
-        if(!document.cookie.includes('jiachenuser')){
+    auth() {
+        if (!document.cookie.includes('jiachenuser')) {
             window.location.assign('/blog')
         }
 
@@ -55,6 +55,8 @@ class Nav extends Component {
 
             <ul className='nav-list'>
                 <li ><a href='/' id='logo'>Jia Chen</a></li>
+                <li id='github' ><a target="blank" href="https://github.com/davidchenbest" ><img src={require('../images/github.png')} /></a></li>
+                <li ><a target='_blank' href='https://drive.google.com/file/d/1qyyNhyyzh0ydhdxBop2US-V78Cdebslr/view?usp=sharing'>Resume</a></li>
                 <li ><a href='/blog'>Blog</a></li>
                 {
                     this.displayLogout()
