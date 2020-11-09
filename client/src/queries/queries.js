@@ -18,7 +18,7 @@ function addAuthor(email, first, last) {
 function addComment(authorId, postId, content) {
   return `
     mutation{
-      addReviewComment(authorId:"${authorId}",postId:"${postId}",content:"${content}"){
+      addReviewComment(authorId:"${authorId}",postId:"${postId}",content:"""${content}"""){
           id
         }
       }`
@@ -32,7 +32,7 @@ function addReviewPost(authorId, title, content) {
   }`
 }
 
-function postsQuery(){
+function postsQuery() {
   return `
   {
     posts{

@@ -55,13 +55,13 @@ const PortfolioContainer = () => {
 
                 <h3>Other Projects</h3>
                 <div>
-                    <a target="_blank" href='https://sudoku-jia.web.app/'>Sudoku game</a>
+                    <a rel="noopener noreferrer" target="_blank" href='https://sudoku-jia.web.app/'>Sudoku game</a>
                 </div>
                 <div>
-                    <a target="_blank" href='https://university-search-program.herokuapp.com/'>St. John’s Class Search Program</a>
+                    <a rel="noopener noreferrer" target="_blank" href='https://university-search-program.herokuapp.com/'>St. John’s Class Search Program</a>
                 </div>
                 <div>
-                    <a target="_blank" href='https://davidchenbest.github.io/paint-app/index.html'>Paint app</a>
+                    <a rel="noopener noreferrer" target="_blank" href='https://davidchenbest.github.io/paint-app/index.html'>Paint app</a>
                 </div>
 
 
@@ -92,7 +92,7 @@ const PortfolioContainer = () => {
                         <h1 className='screen-title'>Flashcard</h1>
                         <p>This is a flashcard app developed for personal use.</p>
                         <p>Easy to understand minimalistic design web app for efficient studying with convenient navigation functions</p>
-                        <a target='_blank' href='https://flashcard-jia.web.app/'> Try it out</a>
+                        <a rel="noopener noreferrer" target='_blank' href='https://flashcard-jia.web.app/'> Try it out</a>
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@ const PortfolioContainer = () => {
                 <p>I am a Web Developer in New York City. I build, extend, and maintain websites using various technologies I have learned overtime.</p>
                 <p>I enjoy gaining knowledge through other people and online, mainly through videos or posts/blogs.</p>
                 <p>When I am not programming, I am a big sports fan and outdoor person. I enjoy performing and watching various types of sports, mainly basketball.</p>
-                <a href='/blog'>Even more: my blog</a>
+                <a rel="noopener noreferrer" href='/blog'>Even more: my blog</a>
             </div>
 
         </div>

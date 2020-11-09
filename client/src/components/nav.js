@@ -55,8 +55,8 @@ class Nav extends Component {
 
             <ul className='nav-list'>
                 <li ><a href='/' id='logo'>Jia Chen</a></li>
-                <li id='github' ><a target="blank" href="https://github.com/davidchenbest" ><img src={require('../images/github.png')} /></a></li>
-                <li ><a target='_blank' href='https://drive.google.com/file/d/1qyyNhyyzh0ydhdxBop2US-V78Cdebslr/view?usp=sharing'>Resume</a></li>
+                <li id='github' ><a rel="noopener noreferrer" target="blank" href="https://github.com/davidchenbest" ><img alt='github' src={require('../images/github.png')} /></a></li>
+                <li ><a rel="noopener noreferrer" target='_blank' href='https://drive.google.com/file/d/1qyyNhyyzh0ydhdxBop2US-V78Cdebslr/view?usp=sharing'>Resume</a></li>
                 <li ><a href='/blog'>Blog</a></li>
                 {
                     this.displayLogout()
