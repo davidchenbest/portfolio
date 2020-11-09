@@ -23,9 +23,7 @@
       position: absolute;
       z-index: 3;
   }
-  .port-screen a{
-      color: lightgray;
-  }
+
   #screen-img{
       width: 100%;
       margin-bottom: 10px;
@@ -65,6 +63,12 @@
 .portfolioContainer{
     text-align: center;
     
+}
+.portfolioContainer a{
+    color: black;
+}
+.portfolioContainer  a:hover{
+    color:navy
 }
 
 .landing-content{

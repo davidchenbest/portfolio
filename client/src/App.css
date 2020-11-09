@@ -6,6 +6,7 @@
   box-sizing: border-box; /* Opera/IE 8+ */
   text-decoration: none;
   list-style: none;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 .wrapper {
@@ -144,12 +145,12 @@
 }
 
 #each-post-title {
-  font-size: 45px;
+  font-size: 30px;
   font-weight: 800px;
 }
 
 #each-post-name-con {
-  font-size: 16px;
+  font-size: 15px;
   color: grey;
   margin-left: 10px;
   display: flex;
@@ -160,7 +161,7 @@
   background-color: rgba(235, 235, 22, 0.212);
   margin: 10px 10px 0 10px;
   padding: 10px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .comment-con {
@@ -265,7 +266,7 @@
   display: block;
   width: 90px;
   padding: 10px;
-  font-size: 22px;
+  font-size: 20px;
   color: black;
 }
 .nav-list li a:not(#logo):not(.active):hover {
