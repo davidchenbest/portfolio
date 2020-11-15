@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 
 
 class Nav extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            data: ''
+
+            slideMenu: false
         };
 
     }
@@ -46,24 +47,38 @@ class Nav extends Component {
         )
     }
 
+    displayMenu = () => {
+        const menu = document.querySelector('.nav-list')
+        if (!this.state.slideMenu) {
+            menu.style.display = 'flex'
+        }
+        else menu.style.display = 'none'
+        this.setState({ slideMenu: !this.state.slideMenu })
+    }
+
 
 
 
 
     render() {
         return (
+            <nav>
+                <a href='/' id='logo'>Jia Chen</a>
+                <ul className='nav-list'>
 
-            <ul className='nav-list'>
-                <li ><a href='/' id='logo'>Jia Chen</a></li>
-                <li id='github' ><a rel="noopener noreferrer" target="blank" href="https://github.com/davidchenbest" ><img alt='github' src={require('../images/github.png')} /></a></li>
-                <li ><a rel="noopener noreferrer" target='_blank' href='https://drive.google.com/file/d/1qyyNhyyzh0ydhdxBop2US-V78Cdebslr/view?usp=sharing'>Resume</a></li>
-                <li ><a href='/blog'>Blog</a></li>
-                {
+                    <li ><a href='/blog'>Blog</a></li>
+                    <li ><a rel="noopener noreferrer" target='_blank' href='https://drive.google.com/file/d/1qyyNhyyzh0ydhdxBop2US-V78Cdebslr/view?usp=sharing'>Resume</a></li>
+                    <li id='github' ><a rel="noopener noreferrer" target="blank" href="https://github.com/davidchenbest" ><img alt='github' src={require('../images/github.png')} /></a></li>
+                    {/* {
                     this.displayLogout()
-                }
-            </ul>
+                } */}
+                </ul>
 
 
+                <span className="material-icons menu-icon" onClick={this.displayMenu}>&#xe5d2;</span>
+
+
+            </nav>
 
         );
     }

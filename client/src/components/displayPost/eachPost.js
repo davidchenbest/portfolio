@@ -3,9 +3,7 @@ import CommentContainer from './commentContainer'
 import AddComment from './addComment'
 import cap from '../../modules/capitalizeFirstLetter'
 
-const EachPost = ({id,title, content, first, last, date, comments, email }) => {
-    
-    console.log(content);
+const EachPost = ({ id, title, content, first, last, date, comments, email }) => {
     return (
         <div className='eachPost maxWidth'>
             <div id='each-post-title-con'>
@@ -19,12 +17,12 @@ const EachPost = ({id,title, content, first, last, date, comments, email }) => {
             <div id='each-post-content-con'>
                 <p className='preserveBreak'>{content}</p>
             </div>
-            
-            {(comments.length >0) &&
-            <CommentContainer comments={comments}></CommentContainer>
+
+            {(comments.length > 0) &&
+                <CommentContainer comments={comments}></CommentContainer>
             }
             <AddComment id={id}></AddComment>
-            
+
         </div>
     )
 

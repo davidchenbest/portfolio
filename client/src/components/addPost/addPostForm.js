@@ -3,6 +3,7 @@ import PostForm from './postForm'
 import CheckEmail from './checkEmail'
 import ReviewScreen from './reviewScreen'
 import { addReviewPost } from '../../queries/queries'
+import fetchGraphQL from '../../modules/fetchGraphQL'
 
 
 
@@ -22,17 +23,17 @@ class AddPostForm extends Component {
 
     }
 
-    async fetchGraphQL(query) {
-        const url = '/graphql'
-        const opts = {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ query })
-        };
-        const res = await fetch(url, opts)
-        const data = await res.json();
-        return data
-    }
+    // async fetchGraphQL(query) {
+    //     const url = '/graphql'
+    //     const opts = {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({ query })
+    //     };
+    //     const res = await fetch(url, opts)
+    //     const data = await res.json();
+    //     return data
+    // }
 
     submitPost = (title, content) => {
         if (title.trim() && content.trim()) {
@@ -51,7 +52,7 @@ class AddPostForm extends Component {
     checkEmail = async (id) => {
         if (id && this.state.title && this.state.content) {
             const query = addReviewPost(id, this.state.title, this.state.content)
-            const reviewPost = await this.fetchGraphQL(query)
+            const reviewPost = await fetchGraphQL(query)
             const reviewPostId = reviewPost.data.addReviewPost.title
             this.setState({ reviewScreen: true, title: '', content: '', message: `${reviewPostId} submitted for review` })
             setTimeout(() => { this.setState({ message: '' }) }, 3000)

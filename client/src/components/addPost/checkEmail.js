@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { emailQuery, addAuthor } from '../../queries/queries'
+import fetchGraphQL from '../../modules/fetchGraphQL'
 
 class CheckEmail extends Component {
     constructor(props) {
@@ -13,21 +14,21 @@ class CheckEmail extends Component {
         };
     }
 
-    async fetchGraphQL(query) {
-        const url = '/graphql'
-        const opts = {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ query })
-        };
-        const res = await fetch(url, opts)
-        const data = await res.json();
-        return data
-    }
+    // async fetchGraphQL(query) {
+    //     const url = '/graphql'
+    //     const opts = {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({ query })
+    //     };
+    //     const res = await fetch(url, opts)
+    //     const data = await res.json();
+    //     return data
+    // }
 
     isEmailRegistered = async (email) => {
         const query = emailQuery(email)
-        const data = await this.fetchGraphQL(query)
+        const data = await fetchGraphQL(query)
         return data.data.author
     }
 
@@ -44,7 +45,7 @@ class CheckEmail extends Component {
         }
         if (this.state.first && this.state.last && this.state.email) {
             const query = addAuthor(this.state.email, this.state.first, this.state.last)
-            const author = await this.fetchGraphQL(query);
+            const author = await fetchGraphQL(query);
             if (author.errors) {
                 let e = ''
                 author.errors.forEach(element => {

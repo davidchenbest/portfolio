@@ -10,7 +10,8 @@ class PostContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
+            fetch: false
         };
 
     }
@@ -18,6 +19,7 @@ class PostContainer extends Component {
     async componentDidMount() {
         const data = (await this.getData()).data.posts
         this.setState({ data })
+        this.setState({ fetch: true })
     }
 
     getData = async () => {
@@ -34,11 +36,16 @@ class PostContainer extends Component {
 
     render() {
         return (
-            <>
-                {this.state.data.map((d, index) => (
+            < div className='postContainer'>
+
+                {this.state.fetch && this.state.data.map((d, index) => (
                     <EachPost key={index} id={d.id} title={d.title} content={d.content} first={d.author.first} last={d.author.last} date={secToDate(d.date)} comments={d.comments}></EachPost>
                 ))}
-            </>
+
+                {!this.state.fetch &&
+                    <p>Loading...</p>
+                }
+            </div>
         );
     }
 }

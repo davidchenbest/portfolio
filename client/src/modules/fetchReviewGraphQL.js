@@ -1,4 +1,4 @@
-async function fetchReviewGraphQL(query){
+async function fetchReviewGraphQL(query) {
     const url = '/reviewgraphql'
     const opts = {
         method: "POST",

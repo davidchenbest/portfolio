@@ -10,8 +10,8 @@ const EachComment = ({ first, last, date, content }) => {
                 <p>{cap(last)}</p>
                 <p className='date'>{secToDate(date)}</p>
             </div>
-            <div className='comment-content-con preserveBreak'>
-                <p >{content}</p>
+            <div className='comment-content-con'>
+                <p className='preserveBreak' >{content}</p>
             </div>
 
         </div>
