@@ -77,6 +77,7 @@ body{
 
 #post-form-ta {
   border-radius: 5px;
+  font-size: 20px;
   padding: 5px 10px;
   resize: none;
   height: 100px;
