@@ -12,9 +12,9 @@ const authRoutes = require('./routes/authRoutes')
 const graphQLRoutes = require('./routes/graphQLRoutes')
 
 
+app.use(cors())
 app.use(graphQLRoutes)
 app.use(authRoutes)
-app.use(cors())
 
 
 
