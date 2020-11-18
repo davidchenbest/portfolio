@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { motion } from 'framer-motion'
 
 
 
@@ -68,7 +69,7 @@ class Nav extends Component {
 
                     <li ><a href='/blog'>Blog</a></li>
                     <li ><a rel="noopener noreferrer" target='_blank' href='https://drive.google.com/file/d/1qyyNhyyzh0ydhdxBop2US-V78Cdebslr/view?usp=sharing'>Resume</a></li>
-                    <li id='github' ><a rel="noopener noreferrer" target="blank" href="https://github.com/davidchenbest" ><img alt='github' src={require('../images/github.png')} /></a></li>
+                    <li id='github' ><a rel="noopener noreferrer" target="blank" href="https://github.com/davidchenbest" ><motion.img whileTap={{ scale: 1.2 }} alt='github' src={require('../images/github.png')} /></a></li>
                     {
                         this.displayLogout()
                     }

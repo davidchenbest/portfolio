@@ -3,6 +3,7 @@ import EachPost from './eachPost'
 import fetchGraphQL from '../../modules/fetchGraphQL'
 import { postsQuery } from '../../queries/queries'
 import secToDate from '../../modules/secToDate'
+import { motion } from 'framer-motion'
 
 
 
@@ -43,7 +44,15 @@ class PostContainer extends Component {
                 ))}
 
                 {!this.state.fetch &&
-                    <p>Loading...</p>
+                    <motion.p
+                        animate={{
+                            scale: 1.1,
+                            transition: {
+                                duration: 0.3,
+                                yoyo: Infinity
+                            }
+                        }}
+                    >Loading...</motion.p>
                 }
             </div>
         );

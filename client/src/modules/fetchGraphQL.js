@@ -1,5 +1,5 @@
 async function fetchGraphQL(query) {
-    const url = `/graphql` // '/graphql'
+    const url = `graphql` // '/graphql'
     const opts = {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -71,7 +71,7 @@ class AddPostForm extends Component {
 
     display = () => {
         if (!this.state.showForm) return (
-            <button id='add-post' onClick={() => this.setState({ showForm: !this.state.showForm })}>Post</button>
+            <button id='add-post' onClick={() => this.setState({ showForm: !this.state.showForm })} >Post</button>
         )
         if (this.state.reviewScreen) {
             return (<ReviewScreen goBack={this.setReviewScreen} type='post' title={this.state.title}></ReviewScreen>)

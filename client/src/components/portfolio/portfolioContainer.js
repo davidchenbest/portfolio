@@ -1,5 +1,31 @@
 import React from 'react'
 import fetchGraphQL from '../../modules/fetchGraphQL'
+import { motion } from 'framer-motion'
+
+const slideDownVariant = {
+    initial: {
+        y: '-100vh',
+    },
+    end: {
+        y: 0,
+        transition: {
+            duration: .4,
+            type: 'just',
+            when: 'beforeChildren'
+        }
+    },
+}
+const fadeVariant = {
+    initial: {
+        opacity: 0
+    },
+    end: {
+        opacity: 1,
+        transition: {
+            duration: .3,
+        }
+    },
+}
 
 
 const PortfolioContainer = () => {
@@ -22,50 +48,63 @@ const PortfolioContainer = () => {
 
     return (
         <div className='portfolioContainer'>
-            <div className='landing-content'>
-                <div className='img-con'>
-                    <img alt='Profile' src={require('../../images/pfp.jpg')} id='pfp' />
+            <motion.div
+                variants={slideDownVariant}
+                initial='initial'
+                animate='end'
+                className='landing-content'>
+                <motion.div
+                    className='img-con'>
+                    <motion.img whileTap={{ scale: 1.2 }} alt='Profile' src={require('../../images/pfp.jpg')} id='pfp' />
                     <div >
                         <h1 id="name" >Jia Chen</h1>
                         <p className='description ' >Continuous Learning</p>
 
                     </div>
-                </div>
+                </motion.div>
 
 
-                <p>Software engineer pursuing software development <br /> with vision to create interactive and functional applications. </p>
+                <motion.p
+                    variants={fadeVariant}
+                >Software engineer pursuing software development <br /> with vision to create interactive and functional applications. </motion.p>
                 <a href='mailto:davidchen108@gmail.com' className='button'>Get In Touch</a>
-            </div>
+            </motion.div>
 
 
             <div className='portSection'>
                 <h2 className='title'>Portfolio & Projects</h2>
                 <div className='portSelect'>
-                    <div className='img-section' >
-                        <img alt='Broadfeet' onClick={imgClick} src={require('../../images/bf1.JPG')} data-number='one' id='port-img' />
+                    <motion.div
+                        whileHover={{ y: '-5px' }}
+
+                        className='img-section' >
+                        <motion.img whileTap={{ scale: 1.2 }} alt='Broadfeet' onClick={imgClick} src={require('../../images/bf1.JPG')} data-number='one' id='port-img' />
                         <h3>Inventory Management</h3>
                         <p>Automotive application design for business to business use</p>
                         <div className='techDes'>
                             <div>Node Express EJS MongoDB</div>
                         </div>
-                    </div>
-                    <div className='img-section' >
-                        <img alt='flashcard' onClick={imgClick} src={require('../../images/flash1.JPG')} data-number='two' id='port-img' />
+                    </motion.div>
+                    <motion.div
+                        whileHover={{ y: '-5px' }}
+
+                        className='img-section' >
+                        <motion.img whileTap={{ scale: 1.2 }} alt='flashcard' onClick={imgClick} src={require('../../images/flash1.JPG')} data-number='two' id='port-img' />
                         <h3>Flashcard</h3>
                         <p>Personal studying tool design with simple features</p>
                         <div className='techDes'>
                             <div> Node Express  React MongoDB</div>
-                            <a rel="noopener noreferrer" target="blank" href="https://github.com/davidchenbest/flashcards-app" id='github' ><img alt='github' src={require('../../images/github.png')} /></a>
+                            <a rel="noopener noreferrer" target="blank" href="https://github.com/davidchenbest/flashcards-app" id='github' ><motion.img whileTap={{ scale: 1.2 }} alt='github' src={require('../../images/github.png')} /></a>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 <div className='port-screen one'>
                     <span className='exit-screen' onClick={exitScreen}>X</span>
                     <div className='screen-img-con'>
-                        <img alt='Broadfeet' src={require('../../images/bf1.JPG')} id='screen-img' onClick={largeImg} />
-                        <img alt='Broadfeet' src={require('../../images/bf2.JPG')} id='screen-img' onClick={largeImg} />
-                        <img alt='Broadfeet' src={require('../../images/bf3.JPG')} id='screen-img' onClick={largeImg} />
+                        <motion.img whileTap={{ scale: 1.2 }} alt='Broadfeet' src={require('../../images/bf1.JPG')} id='screen-img' onClick={largeImg} />
+                        <motion.img whileTap={{ scale: 1.2 }} alt='Broadfeet' src={require('../../images/bf2.JPG')} id='screen-img' onClick={largeImg} />
+                        <motion.img whileTap={{ scale: 1.2 }} alt='Broadfeet' src={require('../../images/bf3.JPG')} id='screen-img' onClick={largeImg} />
                     </div>
                     <div>
                         <h1 className='screen-title'>Inventory Management</h1>
@@ -79,8 +118,8 @@ const PortfolioContainer = () => {
                 <div className='port-screen two'>
                     <span className='exit-screen' onClick={exitScreen}>X</span>
                     <div className='screen-img-con'>
-                        <img alt='flashcard' src={require('../../images/flash1.JPG')} id='screen-img' onClick={largeImg} />
-                        <img alt='flashcard' src={require('../../images/flash2.JPG')} id='screen-img' onClick={largeImg} />
+                        <motion.img whileTap={{ scale: 1.2 }} alt='flashcard' src={require('../../images/flash1.JPG')} id='screen-img' onClick={largeImg} />
+                        <motion.img whileTap={{ scale: 1.2 }} alt='flashcard' src={require('../../images/flash2.JPG')} id='screen-img' onClick={largeImg} />
                     </div>
                     <div>
                         <h1 className='screen-title'>Flashcard</h1>

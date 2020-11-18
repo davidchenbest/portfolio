@@ -18,6 +18,7 @@ body{
 }
 
 .button {
+  font-size: 16px;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -91,9 +92,10 @@ body{
   margin-top: 5px;
 }
 #post-form-btn-con button {
+  font-size: 16px;
   border-radius: 5px;
   border: none;
-  padding: 3px 10px;
+  padding: 5px 10px;
 }
 #post-form-btn-con button:hover {
   background-color: rgba(6, 206, 6, 0.671);
@@ -258,8 +260,6 @@ nav{
 }
 
 .nav-list {
-
-
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -359,10 +359,14 @@ span#add-review-post {
     top: 50px;
     right: 0;
     background-color: lightblue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: none;
+    z-index: 3;
   }
+  
 
   .menu-icon{
     display: block;
   }
 }
+

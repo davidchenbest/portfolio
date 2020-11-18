@@ -72,8 +72,8 @@ class CheckEmail extends Component {
             <form className='checkEmailForm' onSubmit={this.checkEmail}>
                 <input onChange={(e) => this.setState({ email: e.target.value })} placeholder='Email' required></input>
                 <div className='btn-con'>
-                    <button>Enter Email</button>
-                    <button onClick={this.goBack}>Back</button>
+                    <button className='button'>Enter</button>
+                    <button onClick={this.goBack} className='button'>Back</button>
                 </div>
             </form>
         )
@@ -88,8 +88,8 @@ class CheckEmail extends Component {
                 <span>{this.state.error}</span>
                 <div className='btn-con'>
 
-                    <button>Enter Email</button>
-                    <button onClick={this.goBack}>Back</button>
+                    <button className='button'>Enter</button>
+                    <button onClick={this.goBack} className='button'>Back</button>
                 </div>
             </form>
         )
