@@ -64,7 +64,7 @@ class Nav extends Component {
     render() {
         return (
             <nav>
-                <a href='/' id='logo'>Jia Chen</a>
+                <motion.a animate={{ transition: { duration: .5, ease: 'easeInOut' }, scale: [1, 1.1, 1] }} href='/' id='logo'>Jia Chen</motion.a>
                 <ul className='nav-list'>
 
                     <li ><a href='/blog'>Blog</a></li>

@@ -7,10 +7,6 @@
   text-decoration: none;
   list-style: none;
   font-family: Arial, Helvetica, sans-serif;
-  
-}
-body{
-  
 }
 
 .wrapper {
@@ -26,8 +22,8 @@ body{
   white-space: nowrap;
 }
 .button:hover {
-  background-color:  #385898;
-  color:white;
+  background-color: #385898;
+  color: white;
 }
 
 .preserveBreak {
@@ -139,7 +135,7 @@ body{
   margin-right: 5px;
 }
 
-.postContainer{
+.postContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -247,16 +243,15 @@ body{
 }
 
 /* Nav */
-nav{
+nav {
   padding: 15px 15px;
   display: flex;
-  
+
   width: 100%;
 }
 
-#github img{
+#github img {
   height: 26px;
-  vertical-align: baseline;
 }
 
 .nav-list {
@@ -264,7 +259,6 @@ nav{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  ;
 }
 #logo {
   white-space: nowrap;
@@ -304,7 +298,7 @@ nav{
   justify-content: flex-end;
 }
 
-.menu-icon{
+.menu-icon {
   display: none;
   margin-left: auto;
   margin-right: 0;
@@ -350,8 +344,8 @@ span#add-review-post {
 }
 /* End Review Post */
 
-@media screen and (max-width:600px){
-  .nav-list{
+@media screen and (max-width: 600px) {
+  .nav-list {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -363,10 +357,8 @@ span#add-review-post {
     display: none;
     z-index: 3;
   }
-  
 
-  .menu-icon{
+  .menu-icon {
     display: block;
   }
 }
-
