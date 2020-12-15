@@ -2,6 +2,7 @@ import React from 'react'
 import CommentContainer from './commentContainer'
 import AddComment from './addComment'
 import cap from '../../modules/capitalizeFirstLetter'
+import EachPostContent from './eachPostContent'
 
 const EachPost = ({ id, title, content, first, last, date, comments, email }) => {
     return (
@@ -14,9 +15,7 @@ const EachPost = ({ id, title, content, first, last, date, comments, email }) =>
                 <span>{cap(first)} {cap(last)} {email}</span>
                 <p className='date'>{date}</p>
             </div>
-            <div id='each-post-content-con'>
-                <p className='preserveBreak'>{content}</p>
-            </div>
+            <EachPostContent content={content}></EachPostContent>
 
             {(comments.length > 0) &&
                 <CommentContainer comments={comments}></CommentContainer>

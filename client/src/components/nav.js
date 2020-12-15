@@ -68,7 +68,7 @@ class Nav extends Component {
                 <ul className='nav-list'>
 
                     <li ><a href='/blog'>Blog</a></li>
-                    <li ><a rel="noopener noreferrer" target='_blank' href='https://drive.google.com/file/d/1qyyNhyyzh0ydhdxBop2US-V78Cdebslr/view?usp=sharing'>Resume</a></li>
+                    <li ><a rel="noopener noreferrer" target='_blank' href='https://drive.google.com/file/d/1GkDC0JBxphOvPf7A27iR5U8qU5E6iuCv/view?usp=sharing'>Resume</a></li>
                     <li id='github' ><a rel="noopener noreferrer" target="blank" href="https://github.com/davidchenbest" ><motion.img whileTap={{ scale: 1.2 }} alt='github' src={require('../images/github.png')} /></a></li>
                     {
                         this.displayLogout()
