@@ -1,5 +1,6 @@
 async function fetchGraphQL(query) {
-    const url = `/graphql` // '/graphql'
+    const url = `/graphql`
+    // const url = `https://jiachenblog.herokuapp.com/graphql`
     const opts = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
