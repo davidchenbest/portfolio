@@ -11,7 +11,7 @@ export default function Badge() {
                 <span>ExpressJS</span> <span>ReactJS</span> <span>Django</span> <span>React Native</span> <span>VueJS</span> <span>JQuery</span>
             </div>
             <div>
-                <span>MySQL</span> <span>MongoDB</span> <span>GraphQL</span> <span>HTML</span> <span>CSS</span> <span>Git</span>
+                <span>MySQL</span> <span>MongoDB</span> <span>GraphQL</span> <span>HTML</span> <span>CSS</span> <span>Git</span> <span>Photoshop</span>
             </div>
         </div>
     )
