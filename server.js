@@ -16,7 +16,33 @@ app.use(cors())
 app.use(graphQLRoutes)
 app.use(authRoutes)
 
+// const {PhotoFolder,Photo} = require('./models/photoGallery/PhotoFolder')
+// app.get('/photo',async(req,res)=>{
+//   let photo = new Photo({photoLink:'testlink'})
+//   let folder = new PhotoFolder({title:'testtitle2', photos:[photo]})
+//   try {
+//     await folder.save()
+//     res.send('work')
+//   } catch (error) {
+//     res.send(error)
+//   }
+  
+// })
 
+// app.get('/gallery',async(req,res)=>{
+//   res.json(await PhotoFolder.find({}))
+  
+// })
+
+// app.get('/addphoto',async(req,res)=>{
+//   const folderid = "60198d887561cb09ec4eb732"
+//   const photo = new Photo({title:"phototitle",photoLink:"hey",description:""})
+//   const folder = await PhotoFolder.updateOne({_id:folderid},{$push:
+//       {photos:photo}
+//   })
+//   if(folder.nModified) return res.json (photo)
+//   res.json(folder)
+// })
 
 const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://jiachen.herokuapp.com/']
 const corsOptions = {
