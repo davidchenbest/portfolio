@@ -1,13 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { NavLink } from 'react-router-dom';
-
-const activeStyle={
-    backgroundColor: '#385898',
-      color: '#fff'
-  }
-
-
   
   export default function Nav() {
       const [slideMenu,setSlideMenu] = useState(false)
