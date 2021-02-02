@@ -10,38 +10,40 @@ import ManageComment from './components/manageComment/manageComment'
 import PortfolioContainer from './components/portfolio/portfolioContainer'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-
 function App() {
   return (
     <BrowserRouter>
+      <Nav></Nav>
       <Switch>
 
         <Route exact path='/' >
-          <Nav></Nav>
           <PortfolioContainer></PortfolioContainer>
         </Route>
 
         <Route exact path='/blog'>
           <div className="App">
-            <Nav></Nav>
             <AddPostForm></AddPostForm>
             <PostContainer></PostContainer>
           </div>
         </Route>
 
-        <Route exact path='/manage'>
+        <Route exact path='/gallery' >
+          <h1>gallery</h1>
+        </Route>
 
-          <Nav></Nav>
+        <Route exact path='/manage'>
           <ManagePost></ManagePost>
           <ManageComment></ManageComment>
-
         </Route>
 
 
 
         <Route exact path='/login' >
-          <Nav></Nav>
           <Login></Login>
+        </Route>
+
+        <Route path='/' >
+          <h1>404</h1>
         </Route>
 
       </Switch>
