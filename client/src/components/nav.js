@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { motion } from 'framer-motion'
-
+import { NavLink } from 'react-router-dom';
+import '../css/nav.css';
 
 
 class Nav extends Component {
@@ -38,7 +39,7 @@ class Nav extends Component {
         if (document.cookie.includes('jiachenuser')) {
             return (
                 <>
-                    <li  ><a href='/manage'>Manage</a></li>
+                    <li  ><NavLink activeClassName="activeNav" to="/manage" isActive={()=>{}} >Manage</NavLink></li>
                     <li id='nav-login'><a href='/logout'>Logout</a></li>
                 </>
             )
@@ -64,10 +65,10 @@ class Nav extends Component {
     render() {
         return (
             <nav>
-                <motion.a animate={{ transition: { duration: .5, ease: 'easeInOut' }, scale: [1, 1.1, 1] }} href='/' id='logo'>Jia Chen</motion.a>
+                <motion.span animate={{ transition: { duration: .5, ease: 'easeInOut' }, scale: [1, 1.1, 1] }}><NavLink to='/' id='logo'>Jia Chen</NavLink></motion.span>
                 <ul className='nav-list'>
 
-                    <li ><a href='/blog'>Blog</a></li>
+                    <li ><NavLink activeClassName="activeNav" to="/blog" isActive={()=>{}} >Blog</NavLink></li>
                     <li ><a rel="noopener noreferrer" target='_blank' href='https://drive.google.com/file/d/1GkDC0JBxphOvPf7A27iR5U8qU5E6iuCv/view?usp=sharing'>Resume</a></li>
                     <li id='github' ><a rel="noopener noreferrer" target="blank" href="https://github.com/davidchenbest" ><motion.img whileTap={{ scale: 1.2 }} alt='github' src={require('../images/github.png')} /></a></li>
                     {
