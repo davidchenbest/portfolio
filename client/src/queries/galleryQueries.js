@@ -1,5 +1,5 @@
-function galleryFolders(){
-    return`
+function galleryFolders() {
+  return `
     {
         folders{
           title
@@ -17,4 +17,15 @@ function galleryFolders(){
     `
 }
 
-module.exports= {galleryFolders}
+function addPhoto(folderId, photoLink, description) {
+  if (description === null || description === undefined) description = ''
+  return `
+  mutation{
+    addPhoto(folderid:"${folderId}",photoLink:"${photoLink}",description:"${description}"){
+      photoLink
+    }
+  }
+  `
+}
+
+module.exports = { galleryFolders, addPhoto }
