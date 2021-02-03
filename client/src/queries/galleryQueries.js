@@ -31,4 +31,23 @@ function addPhoto(folderId, photoLink, description) {
   `
 }
 
-module.exports = { galleryFolders, addPhoto }
+function addFolder(title,description) {
+  if (description === null || description === undefined) description = ''
+  return `
+  mutation{
+    addFolder(title:"${title}",description:"${description}"){
+      id
+      title
+      description
+      date
+      photos{
+        id
+      }
+    }
+  }
+  `
+}
+
+
+
+module.exports = { galleryFolders, addPhoto, addFolder }
