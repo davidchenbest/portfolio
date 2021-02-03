@@ -44,6 +44,22 @@ app.use(authRoutes)
 //   res.json(folder)
 // })
 
+// app.get('/modifyPhoto',async(req,res)=>{
+//   const folderid = "601ad33c8b494531788657fa"
+//   // const photo = new Photo({title:"phototitle",photoLink:"hey",description:""})
+//   const photoId = '601ad3518b494531788657fb'
+//   try {
+//     const folder = await PhotoFolder.findOne({_id:folderid})
+//   const index =folder.photos.findIndex(photo=> photo.id === photoId)
+//   folder.photos[index].photoLink='https://images.squarespace-cdn.com/content/v1/59d6b903f7e0ab75856a1808/1525827983053-LPN9L6TJLZ6HH17ZSTJG/ke17ZwdGBToddI8pDm48kNu93_l1Rc0JoXikXAEKHf17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmDJyaVitQ06bkWUY0OMxkmN-bdz7wg8la12Me-ub45vBE5029s6uMXtkNCzVgxK8m/bali-fashion-photographer_010.jpg?format=500w'
+//   await folder.save()
+//   res.json(folder)
+//   } catch (error) {
+//     res.json(error)
+//   }
+  
+// })
+
 const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://jiachen.herokuapp.com/']
 const corsOptions = {
   origin: function (origin, callback) {

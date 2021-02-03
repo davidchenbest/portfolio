@@ -57,6 +57,29 @@ const GalleryMutation = new GraphQLObjectType({
           return { photoLink: 'There was an error' }
         }
       }
+    },
+    editPhoto:{
+      type:PhotoType,
+      args:{
+        folderid: { type: new GraphQLNonNull(GraphQLID) },
+        photoid: { type: new GraphQLNonNull(GraphQLID) },
+        photoLink: { type: new GraphQLNonNull(GraphQLString) },
+        description: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      async resolve(parent,args){
+        const {folderid,photoid,photoLink,description} = args
+        try {
+          const folder = await PhotoFolder.findOne({_id:folderid})
+          const index =folder.photos.findIndex(photo=> photo.id === photoid)
+          folder.photos[index].photoLink = photoLink
+          if(description) folder.photos[index].description = description
+          await folder.save()
+          return folder.photos[index]
+        } catch (error) {
+          return { photoLink: 'There was an error' }
+        }
+        
+      }
     }
   }
 })
