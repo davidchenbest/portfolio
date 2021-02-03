@@ -1,14 +1,16 @@
 import React from 'react'
-import secToDate from '../../modules/secToDate'
+import './../../css/photosCon.css'
 
 export default function PhotosCon({ folderObj, photos, photoClick }) {
     return (
-        <div>
+        <div className='photosCon'>
             {photos.map(element =>
-                <div key={element.id}>
-                    <p onClick={(e) => photoClick(e, folderObj, element)}>{element.photoLink}</p>
-                    <p>{secToDate(element.date)}</p>
-                    <p>{element.description}</p>
+                <div key={element.id} >
+                    <img src={element.photoLink} alt={element.photoLink} className='galleryPhoto'
+                    onClick={(e) => photoClick(e, folderObj, element)} />
+                    {/* <div style={{backgroundImage:`url("${element.photoLink}")`}} className='galleryPhoto'
+                    onClick={(e) => photoClick(e, folderObj, element)}> </div> */}
+                    
                 </div>
             )}
         </div>

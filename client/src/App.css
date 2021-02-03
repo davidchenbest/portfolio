@@ -165,6 +165,9 @@
   margin-left: 10px;
   display: flex;
   align-items: center;
+  animation-name: delay;
+  animation-duration: .5s;
+  animation-timing-function: linear;
 }
 
 #each-post-content-con {
@@ -172,6 +175,9 @@
   margin: 10px 10px 0 10px;
   padding: 10px;
   font-size: 20px;
+  animation-name: delay;
+  animation-duration: .5s;
+  animation-timing-function: linear;
 }
 
 .comment-con {

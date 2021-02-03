@@ -1,0 +1,45 @@
+.photosCon{
+  animation-name: delay;
+  animation-duration: .5s;
+  animation-timing-function: linear;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  justify-content: center;
+  padding: 1em;
+}
+
+
+
+.galleryPhoto{
+    width: 300px;
+  height: 300px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+
+
+@media (max-width: 1435px){
+  .photosCon{
+    grid-template-columns: auto auto auto ;
+  }
+}
+
+@media (max-width: 1085px){
+  .photosCon{
+    grid-template-columns: auto auto;
+  }
+  
+}
+
+@media (max-width: 735px){
+  .photosCon{
+    grid-template-columns: auto ;
+  }
+  .galleryPhoto{
+    width: 325px;
+  height: 325px;
+}
+}
