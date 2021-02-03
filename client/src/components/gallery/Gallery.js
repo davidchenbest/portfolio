@@ -34,7 +34,7 @@ export default function Gallery() {
                 <div key={element.id} onClick={(e) => folderClick(e, element)}>
                     <div>
                         <h1>{element.title}</h1>
-                        {isUser && <AddPhoto folderObj={element} />}
+                        {isUser && <AddPhoto folderObj={element} folderState={{folders, setFolders}} />}
                     </div>
 
                     <p>{secToDate(element.date)}</p>

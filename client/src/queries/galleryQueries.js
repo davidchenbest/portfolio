@@ -22,7 +22,10 @@ function addPhoto(folderId, photoLink, description) {
   return `
   mutation{
     addPhoto(folderid:"${folderId}",photoLink:"${photoLink}",description:"${description}"){
+      id
       photoLink
+      description
+      date
     }
   }
   `
