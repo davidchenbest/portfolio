@@ -27,6 +27,7 @@ export default function Projects() {
                     <p>Automotive application design for business to business use</p>
                     <div className='techDes'>
                         <div>Node Express EJS MongoDB</div>
+                        <a rel="noopener noreferrer" target="blank" href="http://inventory.broadfeet.com" id='inventory app' ><i className="material-icons">&#xe879;</i></a>
                     </div>
                 </motion.div>
                 <motion.div
@@ -57,6 +58,7 @@ export default function Projects() {
                     <p>With a login feature that enables the system admin to add/remove users as well as assigning different access and roles to each user. </p>
                     <p>There is also product management tabs that allow admin to download report of inventory via CSV. </p>
                     <p>Allows adding/modifying products through part number and  product description such as fitment and dimension.</p>
+                    <a rel="noopener noreferrer" target='_blank' href='http://inventory.broadfeet.com/' className='button'> Try it out</a>
                 </div>
             </div>
             <div className='port-screen two'>

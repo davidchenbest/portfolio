@@ -11,6 +11,12 @@ export default function OtherProjects() {
         <div className='other-projects' onClick={(e) => otherProject(e)}>
             <h2 className='second-title'>Other Projects</h2>
             <div className='otherProject'>
+                <a rel="noopener noreferrer" target="_blank" href='https://jiachen.netlify.com/'>
+                    <span>Portfolio/Blog/Gallery</span>
+                </a>
+                <a rel="noopener noreferrer" target="_blank" href='https://github.com/davidchenbest/portfolio' ><motion.img whileTap={{ scale: 1.2 }} alt='github' src={require('../../images/github.png')} id="gitIcon" /></a>
+            </div>
+            <div className='otherProject'>
                 <a rel="noopener noreferrer" target="_blank" href='https://jianotes.web.app/'>
                     <span>Note app</span>
                 </a>
