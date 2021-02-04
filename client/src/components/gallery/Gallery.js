@@ -34,26 +34,26 @@ export default function Gallery() {
 
     return (
         <>
-            {loading ? <Loading/>
-            :
-            <div className='galleryCon'>
-                {isUser && <AddFolder folderState={{folders, setFolders}} />}
-                {folders.map(element =>
-                    <div key={element.id} onClick={(e) => folderClick(e, element)} className='folderCon'>
-                        <div className='folderTitle'>
-                            <h1>{capFirst(element.title)}</h1>
-                            {isUser && <AddPhoto folderObj={element} folderState={{folders, setFolders}} />}
-                        </div>
+            {loading ? <Loading />
+                :
+                <div className='galleryCon'>
+                    {isUser && <AddFolder folderState={{ folders, setFolders }} />}
+                    {folders.map(element =>
+                        <div key={element.id} onClick={(e) => folderClick(e, element)} className='folderCon'>
+                            <div className='folderTitle'>
+                                <h1>{capFirst(element.title)}</h1>
+                                {isUser && <AddPhoto folderObj={element} folderState={{ folders, setFolders }} />}
+                            </div>
 
-                        <p>{element.description}</p>
-                        <PhotosCon folderObj={element} photos={element.photos} photoClick={photoClick}></PhotosCon>
-                    </div>
-                )}
-            </div>
+                            <p>{element.description}</p>
+                            <PhotosCon isUser={isUser} folderState={{ folders, setFolders }} folderObj={element} photos={element.photos} photoClick={photoClick}></PhotosCon>
+                        </div>
+                    )}
+                </div>
             }
 
-            
-            
+
+
         </>
     )
 }
