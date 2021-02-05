@@ -6,12 +6,15 @@ import PhotosCon from './PhotosCon'
 import AddPhoto from './AddPhoto'
 import AddFolder from './AddFolder'
 import Loading from '../Loading'
+import Navigator from './Navigator'
 import '../../css/gallery.css'
 
 export default function Gallery() {
     const [folders, setFolders] = useState([])
     const [isUser, setIsUser] = useState(false)
     const [loading, setLoading] = useState(true)
+    const [singleMode, setSingleMode] = useState(false)
+    const [currentPhoto, setCurrentPhoto] = useState({})
     useEffect(() => {
         (async () => {
             const data = await fetchGraphQL(galleryFolders())
@@ -28,8 +31,9 @@ export default function Gallery() {
     }
 
     const photoClick = (e, folderObj, photoObj) => {
+        setSingleMode(!singleMode)
         e.stopPropagation()
-        // console.log(folderObj, photoObj);
+        setCurrentPhoto({ folderObj, photoObj })
     }
 
     return (
@@ -40,7 +44,7 @@ export default function Gallery() {
                     {isUser && <AddFolder folderState={{ folders, setFolders }} />}
                     {
                         folders.length === 0 ? <div>There are no photos available</div> :
-                            folders.map(element =>
+                            folders.map((element) =>
                                 <div key={element.id} onClick={(e) => folderClick(e, element)} className='folderCon'>
                                     <div className='folderTitle'>
                                         <h1>{capFirst(element.title)}</h1>
@@ -53,6 +57,9 @@ export default function Gallery() {
                             )
                     }
                 </div>
+            }
+            {singleMode &&
+                <Navigator currentPhoto={currentPhoto} folderState={{ folders, setFolders }} singleState={{ singleMode, setSingleMode }} />
             }
 
 
