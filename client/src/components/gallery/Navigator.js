@@ -13,25 +13,31 @@ export default function Navigator({ currentPhoto, folderState, singleState }) {
         setCurrentLink(currentPhoto.folderObj.photos[index].photoLink);
     }, [currentPhoto.folderObj.photos, currentPhoto.photoObj.id])
 
-    const rightClick = () => {
-        if (currentIndex === currentPhoto.folderObj.photos.length - 1) return
-        const index = currentIndex + 1
+    const rightClick = e => {
+        e.stopPropagation()
+        let index = currentIndex + 1
+        if (index === currentPhoto.folderObj.photos.length) index = 0
         setCurrentIndex(index)
         setCurrentLink(currentPhoto.folderObj.photos[index].photoLink);
     }
-    const leftClick = () => {
-        if (currentIndex === 0) return
-        const index = currentIndex - 1
+    const leftClick = e => {
+        e.stopPropagation()
+        let index = currentIndex - 1
+        if (index === -1) index = currentPhoto.folderObj.photos.length - 1
         setCurrentIndex(index)
         setCurrentLink(currentPhoto.folderObj.photos[index].photoLink);
+    }
 
+    const exitClick = e => {
+        e.stopPropagation()
+        singleState.setSingleMode(!singleState.singleMode)
     }
 
     return (
-        <div className='singleView'>
-            <i className="material-icons" id='exit' onClick={() => singleState.setSingleMode(!singleState.singleMode)}>&#xe5cd;</i>
-            <i className="material-icons" id='left' onClick={() => leftClick()}>&#xe5cb;</i>
-            <i className="material-icons" id='right' onClick={() => rightClick()}>&#xe5cc;</i>
+        <div className='singleView' onClick={e => exitClick(e)}>
+            <i className="material-icons" id='exit' onClick={e => exitClick(e)}>&#xe5cd;</i>
+            <i className="material-icons" id='left' onClick={e => leftClick(e)}>&#xe5cb;</i>
+            <i className="material-icons" id='right' onClick={e => rightClick(e)}>&#xe5cc;</i>
             <img src={currentLink} alt={currentLink} />
         </div>
     )

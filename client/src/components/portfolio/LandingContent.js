@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { slideDownVariant, fadeVariant } from '../framerMotion/motion'
+import '../../css/patternBackground.css'
 
 export default function LandingContent() {
     return (

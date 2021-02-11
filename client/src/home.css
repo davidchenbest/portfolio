@@ -61,7 +61,7 @@ a {
   width: 90vw;
   min-height: 90vh;
   background-color: #555555f8;
-  position: absolute;
+  position: fixed;
   z-index: 3;
 }
 
@@ -144,7 +144,7 @@ a {
 
 .landing-content {
   padding: 70px 15px;
-  background-image: linear-gradient(#eaeaea, white);
+  /* background-image: linear-gradient(#eaeaea, white); */
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
