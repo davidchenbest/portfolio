@@ -6,6 +6,7 @@ export default function Projects() {
         window.open(e.target.src);
     }
     const imgClick = (e) => {
+        window.location.href = '#'
         const selection = e.target.dataset.number
         document.querySelector(`.portSection div.port-screen.${selection}`).style.display = 'grid'
     }

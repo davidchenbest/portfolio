@@ -59,9 +59,8 @@ a {
   color: white;
   top: 5vh;
   width: 90vw;
-  min-height: 90vh;
   background-color: #555555f8;
-  position: fixed;
+  position: absolute;
   z-index: 3;
 }
 
