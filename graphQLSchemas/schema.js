@@ -3,7 +3,7 @@ const Author = require('../models/Author')
 const Comment = require('../models/Comment')
 const ReviewPost = require('../models/ReviewPost')
 const ReviewComment = require('../models/ReviewComment')
-const {PhotoFolder} = require('../models/photoGallery/PhotoFolder')
+const { PhotoFolder } = require('../models/photoGallery/PhotoFolder')
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -15,7 +15,7 @@ const {
 
 
 const { AuthorType, PostType, CommentType } = require('../graphQLTypes/types');
-const {FolderType}= require('../graphQLTypes/photoGalleryTypes')
+const { FolderType } = require('../graphQLTypes/photoGalleryTypes')
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -63,10 +63,10 @@ const RootQuery = new GraphQLObjectType({
                 return Author.find({})
             }
         },
-        folders:{
-            type:new GraphQLList(FolderType),
-            resolve() {
-                return PhotoFolder.find({}).sort('-date')
+        folders: {
+            type: new GraphQLList(FolderType),
+            async resolve() {
+                return await PhotoFolder.find({}).sort({ date: 'desc' })
             }
         }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import './../../css/photosCon.css'
 import EditPhoto from './EditPhoto'
 
@@ -12,7 +13,7 @@ export default function PhotosCon({ isUser, folderState, folderObj, photos, phot
                     photos.map(element =>
                         <div key={element.id} className='eachPhoto' >
                             {isUser && <EditPhoto folderState={folderState} folderObj={folderObj} photoObj={element} />}
-                            <img src={element.photoLink} alt={element.photoLink} className='galleryPhoto'
+                            <motion.img whileHover={{ scale: 1.05 }} src={element.photoLink} alt={element.photoLink} className='galleryPhoto'
                                 onClick={(e) => photoClick(e, folderObj, element)} />
                         </div>
                     )

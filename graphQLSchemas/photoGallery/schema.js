@@ -10,13 +10,14 @@ const {
 
 const { FolderType, PhotoType } = require('../../graphQLTypes/photoGalleryTypes')
 
+// IMPLEMENT AT PUBLIC SCHEMA
 const GalleryQuery = new GraphQLObjectType({
   name: 'GalleryQueryType',
   fields: {
     folders: {
       type: new GraphQLList(FolderType),
       resolve() {
-        return PhotoFolder.find({}).sort('-date')
+        return {}
       }
     }
   }
@@ -58,27 +59,27 @@ const GalleryMutation = new GraphQLObjectType({
         }
       }
     },
-    editPhoto:{
-      type:PhotoType,
-      args:{
+    editPhoto: {
+      type: PhotoType,
+      args: {
         folderid: { type: new GraphQLNonNull(GraphQLID) },
         photoid: { type: new GraphQLNonNull(GraphQLID) },
         photoLink: { type: new GraphQLNonNull(GraphQLString) },
         description: { type: new GraphQLNonNull(GraphQLString) },
       },
-      async resolve(parent,args){
-        const {folderid,photoid,photoLink,description} = args
+      async resolve(parent, args) {
+        const { folderid, photoid, photoLink, description } = args
         try {
-          const folder = await PhotoFolder.findOne({_id:folderid})
-          const index =folder.photos.findIndex(photo=> photo.id === photoid)
+          const folder = await PhotoFolder.findOne({ _id: folderid })
+          const index = folder.photos.findIndex(photo => photo.id === photoid)
           folder.photos[index].photoLink = photoLink
-          if(description) folder.photos[index].description = description
+          if (description) folder.photos[index].description = description
           await folder.save()
           return folder.photos[index]
         } catch (error) {
           return { photoLink: 'There was an error' }
         }
-        
+
       }
     }
   }

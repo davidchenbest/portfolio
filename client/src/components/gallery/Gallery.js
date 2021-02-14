@@ -18,7 +18,11 @@ export default function Gallery() {
     useEffect(() => {
         (async () => {
             const data = await fetchGraphQL(galleryFolders())
-            setFolders(data.data.folders)
+            const folders = data.data.folders
+            folders.forEach(folder => {
+                folder.photos.sort((a, b) => b.date - a.date)
+            });
+            setFolders(folders)
             setLoading(false)
         })()
         if (document.cookie.includes('jiachenuser')) setIsUser(true)
