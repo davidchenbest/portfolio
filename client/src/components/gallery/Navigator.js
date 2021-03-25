@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useCallback } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import '../../css/navigator.css'
 
 export default function Navigator({ currentPhoto, folderState, singleState }) {
@@ -6,23 +6,22 @@ export default function Navigator({ currentPhoto, folderState, singleState }) {
     const [currentLink, setCurrentLink] = useState('')
 
     const setStateLeftRight = useCallback((e, step) => {
-        if(e) e.stopPropagation()
+        if (e) e.stopPropagation()
         let index = currentIndex + step
         if (index === -1) index = currentPhoto.folderObj.photos.length - 1
         else if (index === currentPhoto.folderObj.photos.length) index = 0
         setCurrentIndex(index)
         setCurrentLink(currentPhoto.folderObj.photos[index].photoLink);
-    },[currentIndex,currentPhoto.folderObj.photos])
+    }, [currentIndex, currentPhoto.folderObj.photos])
 
-    const keydownEvent = useCallback(e=>{
-        console.log(0);
-        if (e.key === 'ArrowRight') setStateLeftRight(null,1)
-        else if (e.key === 'ArrowLeft') setStateLeftRight(null,1)
-    },[setStateLeftRight])
+    const keydownEvent = useCallback(e => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') setStateLeftRight(null, 1)
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') setStateLeftRight(null, 1)
+    }, [setStateLeftRight])
 
     useEffect(() => {
         window.addEventListener('keydown', keydownEvent)
-        return () => window.removeEventListener("keydown",keydownEvent);
+        return () => window.removeEventListener("keydown", keydownEvent);
     }, [keydownEvent])
 
     useEffect(() => {
