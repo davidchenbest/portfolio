@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Popup from './Popup'
 
 export default function Section({ data }) {
     const { meta, imgs, summary, githubLink } = data
     const [popup, setPopup] = useState(false)
-    useEffect(() => {
-        if (popup) window.location.href = '#'
-    }, [popup])
 
     const togglePopup = () => setPopup(pre => !pre)
     return (

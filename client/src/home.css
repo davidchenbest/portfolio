@@ -53,15 +53,25 @@ a {
 
 .port-screen {
   display: grid;
-  padding: 10px;
-  padding-top: 30px;
-  grid-template-columns: 1fr 1fr;
+  column-gap: 1em;
+  padding: 2em 1.5em;
+  grid-template-columns: 1fr 1.2fr;
   color: white;
-  top: 5vh;
+  top: 0;
   width: 90vw;
-  background-color: #555555f8;
-  position: absolute;
+  height: 100vh;
+  background-color: #555555;
+  box-shadow: 0px 0px 300px 5px rgb(60, 60, 60);
+  position: fixed;
   z-index: 3;
+  overflow-y: auto;
+}
+.port-screen .summary {
+  background-color: white;
+  padding: 1em;
+  border-radius: 5px;
+  color: black;
+  text-align: left;
 }
 
 .port-screen .button {
@@ -71,6 +81,14 @@ a {
 .port-screen .button:hover {
   color: white;
   background-color: #385898;
+}
+
+.port-screen-exit {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  position: fixed;
 }
 
 #screen-img {
@@ -91,7 +109,6 @@ a {
   position: absolute;
   right: 0;
   padding: 6px 12px;
-  /* border: 1px solid black; */
 }
 
 .exit-screen:hover {
