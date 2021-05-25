@@ -1,0 +1,17 @@
+[[redirects]]
+from = "/functions/*"
+to = "/.netlify/functions/:splat"
+status=200
+
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build]
+functions ="./functions"
+publish='client/build'
+
+[dev]
+port = 3000
