@@ -22,10 +22,10 @@ const ManageComment = () => {
 
     const addComment = async (e) => {
         const element = document.createElement('span')
-        element.innerHTML ='Added'
+        element.innerHTML = 'Added'
         element.setAttribute('id', 'add-review-post')
         e.target.parentNode.replaceChild(element, e.target)
-        const id  = e.target.dataset.id
+        const id = e.target.dataset.id
         const query = addToComment(id)
         await fetchReviewGraphQL(query)
 
@@ -37,7 +37,7 @@ const ManageComment = () => {
             {comments && comments.map((c, i) => (
                 <div key={i}>
                     <button data-id={c.id} onClick={addComment} id='add-review-post' className='button'>Add</button>
-                    <EachComment key={i} first={c.author.first} last={c.author.first} date={c.date} content={c.content}></EachComment >
+                    <EachComment key={i} first={c.author.first} last={c.author.last} date={c.date} content={c.content}></EachComment >
                 </div>
             ))}
         </div>
