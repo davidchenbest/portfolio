@@ -10,7 +10,8 @@ import ManageComment from './components/manageComment/manageComment'
 import PortfolioContainer from './components/portfolio/portfolioContainer'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Gallery from './components/gallery/Gallery'
-import  './css/keyframes.css'
+import Note from './components/note/Note'
+import './css/keyframes.css'
 
 function App() {
   return (
@@ -30,7 +31,11 @@ function App() {
         </Route>
 
         <Route exact path='/gallery' >
-          <Gallery/>
+          <Gallery />
+        </Route>
+
+        <Route exact path='/note' >
+          <Note />
         </Route>
 
         <Route exact path='/manage'>

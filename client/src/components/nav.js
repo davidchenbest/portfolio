@@ -9,6 +9,7 @@ export default function Nav() {
         if (document.cookie.includes('jiachenuser')) {
             return (
                 <>
+                    <li  ><NavLink activeClassName='active' to="/note"  >Note</NavLink></li>
                     <li  ><NavLink activeClassName='active' to="/manage"  >Manage</NavLink></li>
                     <li id='nav-login'><a href='/logout'>Logout</a></li>
                 </>
