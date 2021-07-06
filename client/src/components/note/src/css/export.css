@@ -1,0 +1,9 @@
+button {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  display: inline;
+  border: none;
+}

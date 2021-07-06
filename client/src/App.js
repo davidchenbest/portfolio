@@ -10,7 +10,7 @@ import ManageComment from './components/manageComment/manageComment'
 import PortfolioContainer from './components/portfolio/portfolioContainer'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Gallery from './components/gallery/Gallery'
-import Note from './components/note/Note'
+import Note from './components/note/src/Note'
 import './css/keyframes.css'
 
 function App() {
