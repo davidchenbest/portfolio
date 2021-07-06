@@ -15,10 +15,10 @@
   font-size: 1.5rem;
 }
 
-/* BackGround */
-/* body {
-  background-color: rgb(255, 211, 194);
-} */
+.noteApp {
+  position: relative;
+}
+
 .eachNote,
 .addCon form {
   background-color: white;

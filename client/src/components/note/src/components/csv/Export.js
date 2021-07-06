@@ -12,7 +12,7 @@ function Export({ notes }) {
     return (
         <>
             <button onClick={downloadClick}>Export</button>
-            <a href="#/" ref={downloadRef} >export</a>
+            <a href="#/" ref={downloadRef} style={{ display: 'none' }} >export</a>
         </>
     )
 }
