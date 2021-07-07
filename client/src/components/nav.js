@@ -11,7 +11,7 @@ export default function Nav() {
                 <>
                     <li  ><NavLink activeClassName='active' to="/note"  >Note</NavLink></li>
                     <li  ><NavLink activeClassName='active' to="/manage"  >Manage</NavLink></li>
-                    <li id='nav-login'><a href='/logout'>Logout</a></li>
+                    <li id='nav-login'><a href='/functions/server/logout'>Logout</a></li>
                 </>
             )
         }
