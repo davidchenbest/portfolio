@@ -11,10 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^2.24.1",
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "graphql": "^15.5.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.11",
     "serverless-http": "^2.7.0"

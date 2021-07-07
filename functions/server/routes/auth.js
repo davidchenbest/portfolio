@@ -3,7 +3,7 @@ const router = express.Router()
 const { createToken } = require('../utils/auth')
 const { maxTime } = require('../config')
 const { MongooseCon } = require('../utils/MongooseCon')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 const login = async (user, password) => {
     if (user) {
@@ -38,6 +38,10 @@ router.get('/logout', (req, res) => {
     res.cookie('jwt', '', { httpOnly: true, maxAge: 1 })
     res.cookie('jiachenuser', '', { maxAge: 1 })
     res.redirect('/')
+})
+
+router.get('/test', (req, res) => {
+    res.send(`test ${process.env.BASE_URL}`)
 })
 
 module.exports = { authRoutes: router }
