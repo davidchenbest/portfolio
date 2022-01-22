@@ -17,6 +17,12 @@ export default function OtherProjects() {
                 <a rel="noopener noreferrer" target="_blank" href='https://github.com/davidchenbest/portfolio' ><motion.img whileTap={{ scale: 1.2 }} alt='github' src={require('../../images/github.png')} id="gitIcon" /></a>
             </div>
             <div className='otherProject'>
+                <a rel="noopener noreferrer" target="_blank" href='https://flashcard-jia.web.app/'>
+                    <span>Flashcard</span>
+                </a>
+                <a rel="noopener noreferrer" target="_blank" href='https://github.com/davidchenbest/flashcards-app' ><motion.img whileTap={{ scale: 1.2 }} alt='github' src={require('../../images/github.png')} id="gitIcon" /></a>
+            </div>
+            <div className='otherProject'>
                 <a rel="noopener noreferrer" target="_blank" href='https://university-search-program.herokuapp.com/'>
                     <span>St. John’s Class Search Program</span>
                 </a>
