@@ -4,7 +4,7 @@ export default {
         description: 'Automotive application design for business to business use', tech: 'React', link: 'https://chen-weather.netlify.app/'
     },
     imgs: [{ name: 'Weather1', src: 'weather1.JPG' }, { name: 'Weather2', src: 'weather2.JPG' }],
-
+    githubLink: 'https://github.com/davidchenbest/weather-app',
     summary: [
         `A weather app using OpenWeatherMap API`,
         `It supports functionalities such as forecast and searches`,
