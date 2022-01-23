@@ -9,16 +9,31 @@ export default function Nba() {
         get(scoreUrl).then(res => { setGames(res.scoreboard.games) })
     }, []);
 
-    return <div>
+    return <div className='games'>
         {games && games.map(game =>
             <div className='game'>
-                {game.period != 0 && <span>LIVE</span>}
-                <img src={`https://cdn.nba.com/logos/nba/${game.homeTeam.teamId}/primary/L/logo.svg`} />
-                {game.homeTeam.teamTricode}
-                {game.homeTeam.score}
-                <img src={`https://cdn.nba.com/logos/nba/${game.awayTeam.teamId}/primary/L/logo.svg`} />
-                {game.awayTeam.teamTricode}
-                {game.awayTeam.score}
+                <div className='teamCon'>
+                    <img src={`https://cdn.nba.com/logos/nba/${game.awayTeam.teamId}/primary/L/logo.svg`} />
+                    <div className='teamNameCon'>
+                        <span>{game.awayTeam.teamTricode}</span>
+                        <span className='record'>{`${game.awayTeam.wins}-${game.awayTeam.losses}`}</span>
+                    </div>
+
+                </div>
+
+                <div className='scoreCon'>
+                    {game.period != 0 && <span className='score'>{`${game.awayTeam.score}-${game.homeTeam.score}`}</span>}
+                    <span className='gameStatus'>{game.gameStatusText}</span>
+                </div>
+
+                <div className='teamCon'>
+                    <img src={`https://cdn.nba.com/logos/nba/${game.homeTeam.teamId}/primary/L/logo.svg`} />
+                    <div className='teamNameCon'>
+                        <span>{game.homeTeam.teamTricode}</span>
+                        <span className='record'>{`${game.homeTeam.wins}-${game.homeTeam.losses}`}</span>
+                    </div>
+                </div>
+
             </div>
         )}
 
