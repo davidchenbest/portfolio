@@ -8,9 +8,10 @@ import Login from './components/Login/login'
 import ManagePost from './components/managePost/managePost'
 import ManageComment from './components/manageComment/manageComment'
 import PortfolioContainer from './components/portfolio/portfolioContainer'
+import GameScores from './components/gameScores/gameScores'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Gallery from './components/gallery/Gallery'
-import  './css/keyframes.css'
+import './css/keyframes.css'
 
 function App() {
   return (
@@ -30,7 +31,11 @@ function App() {
         </Route>
 
         <Route exact path='/gallery' >
-          <Gallery/>
+          <Gallery />
+        </Route>
+
+        <Route exact path='/scores' >
+          <GameScores />
         </Route>
 
         <Route exact path='/manage'>
