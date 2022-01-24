@@ -11,17 +11,18 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  position: relative;
 }
 .game:hover {
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 
-.game div {
+.game > div {
   padding: 0.5rem;
 }
 
-.game img {
-  height: 2.5rem;
+.teamCon img {
+  height: 3rem;
 }
 
 .scoreCon {
@@ -30,7 +31,7 @@
   align-items: center;
 }
 
-.score {
+.scoreCon .score {
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -48,4 +49,71 @@
 .record,
 .gameStatus {
   font-size: 0.6rem;
+}
+
+.periods {
+  grid-column: 2 / span 1;
+  justify-content: center;
+}
+
+.periods {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.period {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+}
+
+.period span:first-child {
+  font-size: 0.5rem;
+}
+
+.periods .score {
+  font-size: 0.8rem;
+}
+
+.leader {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+}
+
+.leader.away {
+  grid-column: 1 / span 1;
+}
+
+.leader.home {
+  grid-column: 3 / span 1;
+}
+
+.leader img {
+  height: 1.8rem;
+}
+
+.leader .name {
+  font-size: 0.6rem;
+}
+
+.leader .stats {
+  font-size: 0.6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.stat {
+  display: grid;
+  gap: 0.1rem;
+  grid-template-columns: 1fr;
+}
+
+.stat span:first-child {
+  font-size: 0.5rem;
+}
+
+.moreInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
