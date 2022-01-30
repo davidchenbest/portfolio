@@ -1,13 +1,7 @@
 const express = require('express');
 const routes = express.Router()
-const fetch = require('node-fetch')
-const config = require('../config')
-const nbaUrl = config.url.nba.scoreUrl
+const nbaRoute = require('./nba')
 
-routes.get('/nba', async (res, req) => {
-    const response = await fetch(nbaUrl)
-    const data = await response.json()
-    req.json(data)
-})
+routes.use('/nba', nbaRoute)
 
 module.exports = routes
