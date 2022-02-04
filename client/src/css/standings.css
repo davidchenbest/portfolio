@@ -26,6 +26,10 @@ tr {
   border-bottom: 1px solid lightgray;
 }
 
+.playoffCutoff {
+  border-bottom: 2px solid black;
+}
+
 tr:hover {
   background-color: lightgray;
 }

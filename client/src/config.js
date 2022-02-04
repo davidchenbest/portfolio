@@ -20,6 +20,7 @@ export default {
             'conf',
             'strk',
             'l10',
-        ]
+        ],
+        playoffSpots: 8
     }
 }
