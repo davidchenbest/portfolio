@@ -10,8 +10,8 @@ import ManageComment from './components/manageComment/manageComment'
 import PortfolioContainer from './components/portfolio/portfolioContainer'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Gallery from './components/gallery/Gallery'
-import Note from './components/note/src/Note'
 import './css/keyframes.css'
+import Nba from './components/gameScores/Nba';
 
 function App() {
   return (
@@ -34,9 +34,7 @@ function App() {
           <Gallery />
         </Route>
 
-        <Route exact path='/note' >
-          <Note />
-        </Route>
+        <Route path='/nba' component={Nba} />
 
         <Route exact path='/manage'>
           <ManagePost></ManagePost>

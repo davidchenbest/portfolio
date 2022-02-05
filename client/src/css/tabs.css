@@ -1,0 +1,16 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.tabs a {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.tabs .active {
+  background-color: lightgray;
+}
