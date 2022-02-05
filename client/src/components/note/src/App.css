@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#heading {
+  display: inline-block;
+  text-align: center;
+}
+#heading h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.noteApp {
+  position: relative;
+}
+
+.eachNote,
+.addCon form {
+  background-color: white;
+}
+
+#darkMode {
+  font-size: 0.8em;
+  float: right;
+  background-color: #424242;
+  color: white;
+  margin: 0.5em;
+
+  cursor: pointer;
+}
+
+#addBtn {
+  font-size: 2.5em;
+  cursor: pointer;
+}
+
+.noteCon {
+  display: grid;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  margin: 1em auto;
+  justify-content: center;
+  width: 80%;
+}
+
+.gridView {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.listView {
+  grid-template-columns: 1fr;
+}
+
+.viewButtonCon {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eachNote {
+  position: relative;
+  white-space: pre-line;
+  border-radius: 5px;
+  padding: 1em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.eachNote:hover {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.eachNote .edit {
+  font-size: 0.5rem;
+  top: 0rem;
+  right: 0.25rem;
+  position: absolute;
+}
+
+.addCon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+.addCon form {
+  width: 50%;
+  min-width: 400px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+input[type='text'],
+textarea {
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+input[type='text'] {
+  border-bottom: 1px solid gray;
+  margin-bottom: 1rem;
+}
+
+.title,
+.content {
+  word-wrap: break-word;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2rem;
+  min-height: 2rem;
+}
+
+.date {
+  opacity: 0.8;
+  font-size: 0.5rem;
+  margin-top: auto;
+  margin-bottom: 0;
+  align-self: flex-end;
+}
+
+.content {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+#noNotes {
+  font-size: 1rem;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+  display: table;
+  margin: auto;
+}
+
+.formCon {
+  position: fixed;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.705);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formCon form {
+  position: relative;
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 1em;
+}
+
+.btnCon {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+input[type='submit'],
+i,
+#error,
+#darkMode {
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  display: inline;
+  border: none;
+}
+
+i:not(#addBtn) {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.addCon input[type='submit'] {
+  float: right;
+}
+input[type='submit']:hover,
+i:not(#addBtn):hover {
+  background-color: rgb(221, 221, 221);
+  cursor: pointer;
+}
+
+#exit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1px 6px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+#exit:hover {
+  background-color: red;
+  color: white;
+}
+
+#save {
+  margin-left: auto;
+  margin-right: 0;
+  font-weight: 600;
+}
+
+/* @media screen and (max-width: 1500px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} */
+
+@media screen and (max-width: 400px) {
+  .addCon form,
+  .formCon form {
+    width: 95%;
+    min-width: 100px;
+  }
+
+  .grid {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+}

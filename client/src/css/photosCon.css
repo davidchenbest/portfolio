@@ -16,6 +16,7 @@
   top: 0.25em;
   right: 0.25em;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .photosCon #editIcon:hover {
