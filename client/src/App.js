@@ -11,7 +11,8 @@ import PortfolioContainer from './components/portfolio/portfolioContainer'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Gallery from './components/gallery/Gallery'
 import './css/keyframes.css'
-import Nba from './components/gameScores/Nba';
+import Nba from './components/gameScores/nba';
+import Webrtc from './components/webrtc/App';
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
         </Route>
 
         <Route path='/nba' component={Nba} />
+
+        <Route exact path='/videoRoom' component={Webrtc} />
 
         <Route exact path='/manage'>
           <ManagePost></ManagePost>
