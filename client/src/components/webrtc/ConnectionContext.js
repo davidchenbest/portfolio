@@ -2,13 +2,13 @@
 import React, { useState, createContext, useRef, useEffect, useCallback } from 'react'
 import Peer from 'peerjs';
 import UserVideoControls from './lib/UserVideoControls';
-const peer = new Peer()
 
 const userVideoControls = new UserVideoControls()
 
 export const ConnectionContext = createContext()
 
 const ConnectionProvider = (props) => {
+    const PEER = useRef()
     const userVideoRef = useRef()
     const [error, setError] = useState('');
     const [peerId, setPeerId] = useState('');
@@ -17,13 +17,15 @@ const ConnectionProvider = (props) => {
     const [name, setName] = useState('');
     const [videoReady, setVideoReady] = useState('');
     useEffect(() => {
-
-        peer.on('open', (id) => {
+        PEER.current = new Peer()
+    }, [])
+    useEffect(() => {
+        PEER.current.on('open', (id) => {
             setPeerId(id)
         });
 
         // answer video call
-        peer.on('call', (incoming) => {
+        PEER.current.on('call', (incoming) => {
             incoming.answer(userVideoRef.current.srcObject)
             incoming.on('stream', function (remoteStream) {
                 setPeers(pre => {
@@ -42,7 +44,7 @@ const ConnectionProvider = (props) => {
 
     const callVideo = useCallback((remotePeerId, joinerName) => {
         console.log('calling', { remotePeerId, joinerName });
-        const outgoing = peer.call(remotePeerId, userVideoRef.current.srcObject, { metadata: { caller: name } })
+        const outgoing = PEER.current.call(remotePeerId, userVideoRef.current.srcObject, { metadata: { caller: name } })
         outgoing.on('stream', (remoteStream) => {
             console.log('stream remoteStream');
             setPeers(pre => {

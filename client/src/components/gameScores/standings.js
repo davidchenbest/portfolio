@@ -6,7 +6,6 @@ import Loading from '../Loading'
 import "../../css/standings.css"
 const standingsUrl = config.nba.url.standingsUrl
 const playoffSpots = config.nba.playoffSpots
-console.log(playoffSpots);
 
 export default function Standings() {
     const [east, setEast] = useState();
